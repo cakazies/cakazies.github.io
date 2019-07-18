@@ -257,16 +257,11 @@ ul, ol {
   list-style:   none;
 }
 
-ul.list-check {
-}
 
 ul.list-check li {
   position:     relative;
   font-size:    18px;
   line-height:  32px;
-}
-
-ul.list-check li::before {
 }
 
 /*ul.list-check li::before {
@@ -296,7 +291,6 @@ ul.list-check li::before {
 }
 
 .section-title::after {
-  background: url("../img/section-divider.png") no-repeat 0 0;
   bottom:   -40px;
   content:  "";
   height:   15px;
@@ -594,7 +588,6 @@ ul.list-check li::before {
 
 .myphoto {
   position: relative;
-  background: url("../img/photo-frame.png") bottom center no-repeat;
   background-size: contain;
 }
 
@@ -621,7 +614,6 @@ ul.list-check li::before {
 /* Video Section
 ------------------------------------------------------------------------------*/
 .video-section {
-  background: url("../img/video-bg.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
   min-height: 500px;
@@ -1247,7 +1239,6 @@ ul.list-check li::before {
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
-  -webkit-backface-visibility: hidden;
   /* ideally, transition speed should match zoom duration */
   -webkit-transition:   all 0.3s ease-out;
        -moz-transition: all 0.3s ease-out;
@@ -1272,7 +1263,6 @@ ul.list-check li::before {
  *  Facts Section
 /* ---------------------------------------------- */
 .facts-section {
-  background: url("../img/video-bg.jpg") no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   color: #fff;
@@ -1296,13 +1286,6 @@ ul.list-check li::before {
   font-size: 18px;
   font-weight: 700;
   margin: 0;
-}
-
-
-/* ---------------------------------------------- /*
- *  Blog Section
-/* ---------------------------------------------- */
-.latest-blog-section {
 }
 
 .blog-post-wrapper {
@@ -1361,9 +1344,6 @@ ul.list-check li::before {
 }
 .entry-header {
   padding: 0 12px;
-}
-.post-meta {
-
 }
 .the-category a {
   font-size: 12px;
@@ -1463,13 +1443,6 @@ ul.list-check li::before {
 
 .hire-section .btn {
   padding: 9px 54px;
-}
-
-
-/* ---------------------------------------------- /*
- *  Contact Section
-/* ---------------------------------------------- */
-.contact-section {
 }
 
 .contact-section strong {

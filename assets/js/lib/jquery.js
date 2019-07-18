@@ -1446,16 +1446,6 @@
         }
     });
     var j = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
-    y.Deferred.exceptionHook = function(t, n) {
-        e.console && e.console.warn && t && j.test(t.name) && e.console.warn("jQuery.Deferred exception: " + t.message, t.stack, n)
-    }
-    ,
-    y.readyException = function(t) {
-        e.setTimeout(function() {
-            throw t
-        })
-    }
-    ;
     var P = y.Deferred();
     function completed() {
         r.removeEventListener("DOMContentLoaded", completed),
