@@ -1,0 +1,64 @@
+{
+    "data" : [
+        {
+            "name" : "Kelulusan System Kemenag",
+            "img": "assets/img/portfolio/sistem-kelulusan.png",
+            "link" : "",
+            "description" : "System kelulusan diatas adalah system yang dibawah naungan Kementrian Agama yang digunakan untuk menentukan kelulusan pada ujian masuk Universitas dibawah naungan Kemenag seluruh Indonesia, system ini menggunakan Bahasa Pemrograman PHP dan framework CodeIgniter."
+        },
+        {
+            "name" : "Fitness System",
+            "img": "assets/img/portfolio/fitness.png",
+            "link" : "",
+            "description" : "System yang digunakan untuk management user dan pendaftaran pada fitness di UIN Sunan Ampel Surabaya, dan untuk rekap yang memungkinkan untuk manajement mengambil langkah berikutnya."
+        },
+        {
+            "name" : "Point Of Sale",
+            "img": "assets/img/portfolio/iboss.png",
+            "link" : "",
+            "description" : "Aplikasi perusahaan Interactive yang bernama IBOSS ini seperti ERP (Enterprise Resource Planning) akan tetapi masih dalam tahap pengembangan, aplikasi ini meliputi stok pada barang digudang transaksi penjualan dan lainnya. Aplikasi ini menggunakan bahasa pemrograman PHP tanpa Framework akan tetapi native, aplikasi ini mencakup seluruh transaksi yang ada di perusahaan Interactive."
+        },
+        {
+            "name" : "Persuratan System",
+            "img": "assets/img/portfolio/persuratan.png",
+            "link" : "",
+            "description" : "Aplikasi yang digunakan untuk persuratan oleh mahasiswa semua fakultas, untuk pengajuan surat seperti surat aktif, surat bebas beasiswa dan masih banyak lagi."
+        },
+        {
+            "name" : "Management User System",
+            "img": "assets/img/portfolio/pln.png",
+            "link" : "",
+            "description" : "Sistem yang digunakan oleh PLN untuk membuat laporan hasil target dan reaslisasi dalam bentuk kegiatan maupun dalam bentuk mendapatkan pelanggan, system ini digunakan oleh PLN Jawa Timur "
+        },
+        {
+            "name" : "Payroll System",
+            "img": "assets/img/portfolio/remun.png",
+            "link" : "",
+            "description" : "System e-kinerja ini sebelumnya digunakan untuk pelaporan karyawan atau dalam dunia Pendidikan disebut TENDIK setiap harinya, setiap hari tendik melaporkan apa saja yang sudah dikerjakan kdalam system tersebut akan tetapi sejak 2017 sistem ini juga terdapat fitur untuk pelaporan BKD (Beban Kinerja Dosen) yang dilaporkan oleh setiap dosen pada akhir semester untuk mempertanggungjawabkan satu semester yang apa saja yang sudah dikerjakan."
+        },
+        {
+            "name" : "Sidarmaku System",
+            "img": "assets/img/portfolio/sidarmaku.png",
+            "link" : "",
+            "description" : "System kerjasama ini digunakan untuk jika ada bagian atau fakultas yang ada kerjasama dengan pihak ke-3 ini salah satu kegunaannya adalah untuk memantau kerjasama apa saja yang akan terjadi pada masing-masing bagian "
+        },
+        {
+            "name" : "Public Fasilitis System",
+            "img": "assets/img/portfolio/sifasum.png",
+            "link" : "http://sifasum.uinsby.ac.id/",
+            "description" : "System ini digunakan untuk memonitoring semua fasiltas umum yang ada di UIN Sunan Ampel Surabaya, peminjaman melalui aplikasi dan penyewaan melalui aplikasi, aplikasi ini sudah digunakan sejak 2016."
+        },
+        {
+            "name" : "UKT System",
+            "img": "assets/img/portfolio/ukt.png",
+            "link" : "",
+            "description" : "Sistem informasi Uang Kuliah Tunggal dimana digunakan oleh UIN Sunan Ampel Surabaya, menggunakan metode Fuzzy Sugeno dengan beberapa parameter yang telah ditentukan oleh pihak management, system ini akan langsung menentukan UKT yang akan dibayarkan oleh mahasiswa setiap semesternya, system ini sudah digunakan sejak tahun 2017."
+        },
+        {
+            "name" : "Public Fasilities Open Source",
+            "img": "assets/img/portfolio/public-fasilities.png",
+            "link" : "https://github.com/cakazies/laravel-fasum",
+            "description" : "Dikembangkan menggunakan Bahasa pemrograman PHP dan Framework Laravel, dengan Rest-API, project bersifat open source jadi bias dikembangkan dengan bebas pada repo saya."
+        }
+    ]
+}
