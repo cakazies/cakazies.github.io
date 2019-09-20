@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -58,18 +60,36 @@
                                     <figure id="images-article"><img src="img/postgres.jpg" alt=""></figure>
                                 </div>
                             </div>
-                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2"><h3>How to stop living your life on autopilot</h3>
-                            <div>
-                                <p>A smile can last a lifetime-if you take care of it. For that reason, it’s
-                                    important for parents to instill good oral health habits in children as early as
-                                    possible.</p>
-                                <p>According to U.S. Surgeon General Richard H. Carmona’s “National Call to Action
-                                    to Promote Oral Health” report, children lose more than 51 million school hours
-                                    and adults lose more than 164 million work hours each year
-                                    due to dental disease or dental visits. The nation’s total bill for dental
-                                    services was estimated to be more than $70.1 billion in 2002.</p>
-                            </div></div>
-                            <script src="https://gist.github.com/cakazies/9f49c1edaae28306fd7f2e706fc4ce65.js"></script>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h3>Introduction</h3>
+                                <div>
+                                    <p>In this article I want to share about little information for “How to connect Postgresql ang Go Language ”. I will share too my all </p>
+                                </div>
+                            </div>
+
+                            <div class="col col--lg-10 col--lg-offset-1">
+                                <div class="article__image">
+                                    <figure id="images-article"><img src="https://miro.medium.com/max/1653/1*G_D8rLfkBCP2j3y9k51dDQ.png" alt=""></figure>
+                                </div>
+                            </div>
+
+                            <div class="col col--lg-10 col--lg-offset-1">
+                                <div class="article__image">
+                                    <script src="https://gist.github.com/cakazies/65150e2d3c765a4247d13f976363ac3b.js"></script>
+                                </div>
+                            </div>
+
+                            <div class="col col--lg-10 col--lg-offset-1">
+                                <div class="article__image">
+                                    <script src="https://gist.github.com/cakazies/6448104e50e48a9da07f6273f365c508.js"></script>
+                                </div>
+                            </div>
+
+                            <div class="col col--lg-10 col--lg-offset-1">
+                                <div class="article__image">
+                                    <script src="https://gist.github.com/cakazies/9f49c1edaae28306fd7f2e706fc4ce65.js"></script>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="article__shares">
@@ -115,19 +135,18 @@
     <script src="js/main.js"></script>
 
     <script>
-
         function readTextFile(file) {
             var rawFile = new XMLHttpRequest();
             rawFile.open("GET", file, false);
-            rawFile.onreadystatechange = function () {
+            rawFile.onreadystatechange = function() {
                 if (rawFile.readyState === 4) {
                     if (rawFile.status === 200 || rawFile.status == 0) {
                         var allText = rawFile.responseText;
                         $(".article_contents").html(allText)
-                    }else {
+                    } else {
                         $(".article_contents").html("")
                     }
-                }else {
+                } else {
                     $(".article_contents").html("")
                 }
             }
@@ -135,7 +154,6 @@
         }
     </script>
 
+</body>
 
-
-
-</body></html>
+</html>
