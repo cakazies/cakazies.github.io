@@ -3,7 +3,7 @@
         {
             "id" : "1",
             "title" : "Connection Postgres with Go Language (Golang)",
-            "images" : "postgres.jpg",
+            "images" : "postgres-golang.png",
             "date" : "2 Agust 2019",
             "link" : "connection-postgres-with-go-language.html",
             "sort_content" : "How to connection Postgresql with Go Language and example get all data in table.",
