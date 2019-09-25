@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <title>Cakazies Blog</title>
+    <title>Cakazies Blog - Connecting Postgres with Go Language</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/custom.css">
@@ -43,7 +43,7 @@
         <div class="container container--xl">
             <div class="row">
                 <div class="col col--lg-10 col--lg-offset-1">
-                    <h1 class="page__title article__title">Connection Postgres with Go Language (Golang)</h1>
+                    <h1 class="page__title article__title">Connecting Postgres with Go Language (Golang)</h1>
                     <div class="page__subtitle article__subtitle">
                         <div class="article__date">Sept 2019</div>
                         <a href="#comments" class="article__stat"><i class="icon icon--comment"></i></a>
@@ -53,34 +53,33 @@
                     <div class="article__content">
                         <div class="row">
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__text article__text--large">How to connection Postgresql with Go Language and example get all data in table.</div>
+                                <div class="article__text article__text--large">How to connecting Postgresql with Go Language and example get all data in table.</div>
                             </div>
                             <div class="col col--lg-10 col--lg-offset-1">
                                 <div class="article__image">
-                                    <figure id="images-article"><img src="img/postgres.jpg" alt=""></figure>
+                                    <figure id="images-article"><img src="img/postgres-golang.png" alt=""></figure>
                                 </div>
                             </div>
                             <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <h3>Introduction</h3>
                                 <div>
-                                    <p>In this article I want to share about little information for “How to connect Postgresql ang Go Language ”. 
-                                        I will share too my repo about postgresql and Go but , in this repo many dependencies and complex then this 
-                                        article only discuss about how to connect Postgresql with Golang LanguageThis repo I will share information 
-                                        about how to prepare first time repo is making.</p>
+                                    <p>In this article I want to share about little information for “How to connect PostgreSQL and Go Language”. 
+                                        I will share too my repo about PostgreSQL and Go but, in this repo many dependencies and complex then this 
+                                        article only discuss how to connect PostgreSQL with Go Language. This repo I will share information about 
+                                        how to prepare first time repo is making.</p>
                                 </div>
                                 <h4>Desclimer for this article </h4>
                                 <ul>
-                                    <li>This article not discuss about how to install Golang (for this information you can reading <a href="https://golang.org/doc/install" target="_blank"> this article </a> )</li>
-                                    <li>This article not discuss about how to install Postgresql (Information  for install Postgresql <a href="http://www.postgresqltutorial.com/install-postgresql/" target="_blank">this</a> )</li> 
-                                    <li>This article not explain about Fundamental Sintax in Golang</li>
+                                    <li>This article doesn’t discuss about how to install Golang (for this information you can reading <a href="https://golang.org/doc/install" target="_blank"> this article </a> )</li>
+                                    <li>This article doesn’t discuss about how to install PostgreSQL (Information  for install Postgresql <a href="http://www.postgresqltutorial.com/install-postgresql/" target="_blank">this</a> )</li> 
+                                    <li>This article not explain about Fundamental Syntax in Golang</li>
                                     <!-- <li>This article not explain how to make table and dummy data you can download backup sql <a href="" target="_blank">this</a></li> -->
                                 </ul>
                                 <div>
-                                    <p>First Time install library Postgresql in your </p>
+                                    <p>First Time install library Postgresql in your local Repo </p>
                                     <code>Go get github.com/lib/pq</code>
                                     <br>
-                                    <p>This repo commonly used most people using golang, you can read this repo in <a href="https://github.com/lib/pq" target="_blank">here</a>. First time I will explain about flow
-                                        how to connect postgresql to Go Language, I will share you about picture flow this repo</p>
+                                    <p>This repo commonly used most people using Golang, you can read this repo in <a href="https://github.com/lib/pq" target="_blank">here</a>. First time I will explain about flow how to connect PostgreSQL to Go Language, I will share you about picture flow this repo</p>
                                 </div>
                             </div>
 
@@ -91,15 +90,18 @@
                             </div>
                             <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <div>
-                                    <p>This picture explain about step by step for connect to postgresql in commonly language, can using PHP, Python, C, Java other 
-                                        this flow commonly used, first flow in our Laguage can code connect Postgresql, in Go mostly used `DB.Open(“postgres”, conn)` 
-                                        because we must make bridge to Postgresql, after we making bridge we can cross with Postgresql, then after we making bridge 
-                                        we must checking for connection, if connection connect we can next step, but if we don’t connect, we must check for this 
-                                        connection, wrong HOST or wrong user or maybe wrong password.</p>
-                                    <p>If successfully connect to Postgresql we can make query and get Data from our Databases, can update, create, select, 
-                                        and delete (CRUD) usually in Go Language used Backend Applications, setting Database, get Query, and setting flow for 
-                                        business, in Backend Apps usually using <a href="https://www.w3schools.com/whatis/whatis_json.asp" target="_blank">JSON</a> for return data , and after return data, data will consume to 
-                                        Frontend Apps, will be display in Apps but in this article not explain how to display data</p>
+                                    <p>This picture explains about step by step for connecting to PostgreSQL in common language, can using PHP, Python, 
+                                        C, Java other this flow commonly used, first flow in our Language can code connect PostgreSQL, in Go mostly 
+                                        used `DB.Open(“postgres”, conn)` because we must make bridge to PostgreSQL, after we making bridge we can 
+                                        cross with PostgreSQL, then after we making bridge we must check for the connection, if the connection already
+                                        connect we can move forward to next step, but if we still haven’t connect, we must check for this connection, 
+                                        wrong HOST or wrong user or maybe wrong password.</p>
+                                    <p>If the connection successfully connect to PostgreSQL we can make query and get Data from our Databases, can 
+                                        update, create, select, and delete (CRUD) usually in Go Language used Backend Applications, setting Database, 
+                                        get Query, and setting flow for business, in Backend Apps usually using 
+                                        <a href="https://www.w3schools.com/whatis/whatis_json.asp" target="_blank">JSON</a> 
+                                        for return data , and after return data, data will consume to Frontend Apps, will be display in Apps but in 
+                                        this article not explain how to display data. 😊</p>
                                     <h4>Next</h4>
                                     <p>First time we create file main.go in our directory (usully in src/{YOUR_DIRECTORY}) then make <a href="https://www.callicoder.com/golang-structs/" target="_blank">STRUCT</a>  example struct for Golang I in below </p>
                                 </div>
@@ -113,8 +115,9 @@
 
                             <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <div>
-                                    <p>This struct for mirror for our table Student, for this article I will choosing ID and Name , we will show all data in Database ID and Name, before we will implement for this query get all data , we must implement 
-                                        connect or making bridge to Postgresql I will show you for code Golang connect to Postgresql.</p>
+                                    <p>This struct for a mirror for our table Student, for this article I will be choosing ID and Name , we will show 
+                                        all data in Database ID and Name, before we will implement for this query get all data , we must implement 
+                                        connect or making bridge to PostgreSQL I will show you for code Golang connect to PostgreSQL.</p>
                                 </div>
                             </div>
                             <div class="col col--lg-10 col--lg-offset-1">
@@ -132,11 +135,11 @@
                                         <li>User : user is access user database postgres you have</li>
                                         <li>Password : password is password your databases local</li>
                                     </ul>
-                                    <p>if done write code connect to postgresql and sont forget write condition, this condition for check our code 
-                                        can connect to postgres ot not, if our code connect to postgres, not showing anystring but if our code does’t 
-                                        connect to postgresql we run and showing error connect to db. Next step is to how to query in postgres using 
-                                        golang , in this article we don’t use library like GORM, ECHO or something like that for database but we will 
-                                        using Golang have “native” you can see this code query golang </p>
+                                    <p>if the code is already written connects to PostgreSQL and don’t forget write condition, this condition for 
+                                        check our code can connect to Postgres or not, if our code connect to Postgres, not showing anything but if 
+                                        our code doesn’t connect to PostgreSQL we run and showing error connect to DB. Next step is to how to query 
+                                        in Postgres using Golang, in this article we don’t use library like GORM, ECHO or something like that for 
+                                        database but we will using Golang have “native” you can see this code query Golang </p>
                                 </div>
                             </div>
                             
@@ -147,11 +150,11 @@
                             </div>
                             <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <div>
-                                    <p>In this code using query `SELECT id,nama FROM student` without condition without where, and this time can will 
+                                    <p>In this code using query `SELECT id, nama FROM student` without condition without where, and this time can will 
                                         show all data in table student and don’t forget for checking error query or not , perhaps , wrong name column, 
-                                        table or existing name table,, this code can condition if something went wrong can shoing erro in logging, and 
+                                        table or existing name table, this code can condition if something went wrong can be showing error in logging, and 
                                         variable BD can using Connection in first time we explain.</p>
-                                    <p>After query don’t forget saving data query in variable data, variable data will scan and change to array, example this code change to array in below </p>
+                                    <p>After query don’t forget saving data query in variable data, variable data will scan and change to an array, example this code change to array in below</p>
                                 </div>
                             </div>
                             <div class="col col--lg-10 col--lg-offset-1">
@@ -161,8 +164,9 @@
                             </div>
                             <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <div>
-                                    <p>First time we must looping data in go used `data.Next() ` this function for looping data, and append to array struct, mahy ways to change data to array struct 
-                                        but this time for basically, next step is change data array struct to json and used for REST API </p>
+                                    <p>First time we must be looping data in go used `data.Next() ` this function for looping data, and append to array struct, 
+                                        many ways to change data to array struct but this time for basically, next step is change data array struct to json and 
+                                        used for REST API </p>
                                 </div>
                             </div>
                             <div class="col col--lg-10 col--lg-offset-1">
@@ -173,8 +177,9 @@
 
                             <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <div>
-                                    <p>This code for change struct to json, and will consume to Front End Engineer 
-                                        TAAAADDDAAAAA this article already finished, and this code for example you can see <a href="https://github.com/cakazies/go-postgre">this repo</a></p>
+                                    <p>This code for change struct to json, and will consume to Front End Engineer </p>
+                                    <br><br>
+                                    <p>TAAAADDDAAAAA this article already finished, and this code for example you can see <a href="https://github.com/cakazies/go-postgre">this repo</a></p>
                                 </div>
                             </div>
                             <br>
