@@ -197,6 +197,16 @@
                                 </div>
                             </div>
                             
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div id="disqus_thread"></div>
+                            </div>
+                            
 
                         </div>
                     </div>
@@ -237,7 +247,29 @@
             </div>
         </div>
     </footer>
-
+    <script>
+    
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    
+    var disqus_config = function () {
+        // this.page.url = '<?php echo get_permalink(); ?>';
+        // this.page.identifier = '<?php echo dsq_identifier_for_post($post); ?>';
+        this.page.url = 'http://localhost/mycv';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost/mycv/blog/connection-postgres-with-go-language.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sapiderman.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/options.js"></script>
     <script src="js/main.js"></script>
