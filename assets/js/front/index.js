@@ -48,9 +48,10 @@ window.jQuery(e => {
                 })
             })
         }).catch(function(e) {
-            return console.warn("Failed to Enable Animations: [", e, "]"), Promise.resolve()
+            return 
+            // return console.warn("Failed to Enable Animations: [", e, "]"), Promise.resolve()
         }).then(function() {
-            console.info("ANIMATIONS ENABLED")
+            // console.info("ANIMATIONS ENABLED")
         })
     }(), e.noty.defaults = {
         layout: "topRight",
@@ -83,13 +84,13 @@ window.jQuery(e => {
             onCloseClick: function() {}
         }
     }, e(window).on("load", function() {
-        e('[name="contact-cell"]').html(atob("KzM4MCg2NykgNzgtemVyby0zMS0xOA==")), e('[name="contact-email"]').prop("href", atob("bWFpbHRvOnRiYWx0cnVzaGFpdGlzQGdtYWlsLmNvbQ==")), console.log("CONTACTS SET")
+        e('[name="contact-cell"]').html(atob("KzM4MCg2NykgNzgtemVyby0zMS0xOA==")), e('[name="contact-email"]').prop("href", atob("bWFpbHRvOnRiYWx0cnVzaGFpdGlzQGdtYWlsLmNvbQ=="))
     }), e(window).ready(function() {
-        console.log("WINDOW___READY")
+        // console.log("WINDOW___READY")
     }), e(document).ready(function() {
-        console.log("DOCUMENT___READY")
+        // console.log("DOCUMENT___READY")
     }), e(window).on("load", function() {
-        console.log("WINDOW___LOAD")
+        // console.log("WINDOW___LOAD")
     })
 });
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - *
