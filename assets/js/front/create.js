@@ -29,7 +29,6 @@ var yesterday = t.toJSON().slice(0,10)
 $.ajax({
     url: "https://www.rescuetime.com/anapi/data?key=B63tHs0dvkidjPYvvRtFjDxg7A1boJhPOccZJ1jE&restrict_kind=activity&restrict_begin="+yesterday+"&restrict_end="+today+"&format=json",
     method: "GET",
-    crossDomain: true,
     success: function(res) {
         data = JSON.parse(JSON.stringify(res))
         for (let i = 0; i < data.rows.length; i++) {
@@ -77,9 +76,8 @@ $.ajax({
         category["entertain"] = entertain
         category["communication"] = communication
         category["utilities"] = utilities
-        console.log(countAll)
         setGrafik(result, mostApps, mostAppsTime)
-},
+    },
     error: function (request, error) {
         console.log(" Can't do because: " + error);
     }
@@ -244,3 +242,6 @@ function setGrafik(result, mostApps, mostAppsTime) {
     });    
 }
 
+function setHeader(xhr) {
+    xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
+}
