@@ -1,5 +1,5 @@
-<html lang="en" xml:lang="en">
 
+<html lang="en" xml:lang="en">
 <head>
 
     <meta charset="utf-8" />
@@ -651,6 +651,10 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <?php
+    $json = file_get_contents("https://www.rescuetime.com/anapi/data?key=B63tHs0dvkidjPYvvRtFjDxg7A1boJhPOccZJ1jE&restrict_kind=activity&restrict_begin=2019-12-01&restrict_end=2019-12-31&format=json");
+    print_r($json);
+    ?>
     <script src="assets/js/front/create.js"></script>
     <script src="assets/js/lib/jquery.noty.packaged.js"></script>
     <script src="assets/js/lib/jquery.waypoints.js"></script>
