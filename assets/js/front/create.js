@@ -26,62 +26,122 @@ var today = new Date().toJSON().slice(0,10);
 t.setDate(t.getDate() - 30);
 var yesterday = t.toJSON().slice(0,10)
 
-$.ajax({
-    url: "https://www.rescuetime.com/anapi/data?key=B63tHs0dvkidjPYvvRtFjDxg7A1boJhPOccZJ1jE&restrict_kind=activity&restrict_begin="+yesterday+"&restrict_end="+today+"&format=json",
-    method: "GET",
-    success: function(res) {
-        data = JSON.parse(JSON.stringify(res))
-        for (let i = 0; i < data.rows.length; i++) {
-            if (data.rows[i][5] == "2") {
-                timeSoftware = timeSoftware + data.rows[i][1]
-                software[countSouftware] = data.rows[i][3]
-                countSouftware++;
-            }else if (data.rows[i][5] == "1") {
-                timeBisnis = timeBisnis + data.rows[i][1]
-                bisnis[countBisnis] = data.rows[i][3]
-                countBisnis++;
-            }else if (data.rows[i][5] == "-2") {
-                timeEntertain = timeEntertain + data.rows[i][1]
-                entertain[countEntertain] = data.rows[i][3]
-                countEntertain++;
-            }else if (data.rows[i][5] == "-1") {
-                timeCommunication = timeCommunication + data.rows[i][1]
-                communication[countCommunication] = data.rows[i][3]
-                countCommunication++;
-            }else if (data.rows[i][5] == "0") {
-                timeUtilities = timeUtilities + data.rows[i][1]
-                utilities[countUtilities] = data.rows[i][3]
-                countUtilities++;
-            }
-            countAll = countAll + data.rows[i][1]
-        }
 
-        mostApps[0] = data.rows[0][3]
-        mostApps[1] = data.rows[1][3]
-        mostApps[2] = data.rows[2][3]
-        mostApps[3] = data.rows[3][3]
-        mostApps[4] = data.rows[4][3]
-        mostAppsTime[0] = (data.rows[0][1]/3600).toLocaleString()
-        mostAppsTime[1] = (data.rows[1][1]/3600).toLocaleString()
-        mostAppsTime[2] = (data.rows[2][1]/3600).toLocaleString()
-        mostAppsTime[3] = (data.rows[3][1]/3600).toLocaleString()
-        mostAppsTime[4] = (data.rows[4][1]/3600).toLocaleString()
-        result['software'] = (timeSoftware/3600).toLocaleString()
-        result["bisnis"] = (timeBisnis/3600).toLocaleString()
-        result["entertain"] = (timeEntertain/3600).toLocaleString()
-        result["communication"] = (timeCommunication/3600).toLocaleString()
-        result["utilities"] = (timeUtilities/3600).toLocaleString()
-        category["software"] = software
-        category["bisnis"] = bisnis
-        category["entertain"] = entertain
-        category["communication"] = communication
-        category["utilities"] = utilities
-        setGrafik(result, mostApps, mostAppsTime)
-    },
-    error: function (request, error) {
-        console.log(" Can't do because: " + error);
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const url = "https://www.rescuetime.com/anapi/data?key=B63tHs0dvkidjPYvvRtFjDxg7A1boJhPOccZJ1jE&restrict_kind=activity&restrict_begin="+yesterday+"&restrict_end="+today+"&format=json"; // site that doesn’t send Access-Control-*
+fetch(proxyurl + url)
+.then(response => response.text())
+.then(contents => {
+    data = JSON.parse(contents)
+    for (let i = 0; i < data.rows.length; i++) {
+        if (data.rows[i][5] == "2") {
+            timeSoftware = timeSoftware + data.rows[i][1]
+            software[countSouftware] = data.rows[i][3]
+            countSouftware++;
+        }else if (data.rows[i][5] == "1") {
+            timeBisnis = timeBisnis + data.rows[i][1]
+            bisnis[countBisnis] = data.rows[i][3]
+            countBisnis++;
+        }else if (data.rows[i][5] == "-2") {
+            timeEntertain = timeEntertain + data.rows[i][1]
+            entertain[countEntertain] = data.rows[i][3]
+            countEntertain++;
+        }else if (data.rows[i][5] == "-1") {
+            timeCommunication = timeCommunication + data.rows[i][1]
+            communication[countCommunication] = data.rows[i][3]
+            countCommunication++;
+        }else if (data.rows[i][5] == "0") {
+            timeUtilities = timeUtilities + data.rows[i][1]
+            utilities[countUtilities] = data.rows[i][3]
+            countUtilities++;
+        }
+        countAll = countAll + data.rows[i][1]
     }
-});
+
+    mostApps[0] = data.rows[0][3]
+    mostApps[1] = data.rows[1][3]
+    mostApps[2] = data.rows[2][3]
+    mostApps[3] = data.rows[3][3]
+    mostApps[4] = data.rows[4][3]
+    mostAppsTime[0] = (data.rows[0][1]/3600).toLocaleString()
+    mostAppsTime[1] = (data.rows[1][1]/3600).toLocaleString()
+    mostAppsTime[2] = (data.rows[2][1]/3600).toLocaleString()
+    mostAppsTime[3] = (data.rows[3][1]/3600).toLocaleString()
+    mostAppsTime[4] = (data.rows[4][1]/3600).toLocaleString()
+    result['software'] = (timeSoftware/3600).toLocaleString()
+    result["bisnis"] = (timeBisnis/3600).toLocaleString()
+    result["entertain"] = (timeEntertain/3600).toLocaleString()
+    result["communication"] = (timeCommunication/3600).toLocaleString()
+    result["utilities"] = (timeUtilities/3600).toLocaleString()
+    category["software"] = software
+    category["bisnis"] = bisnis
+    category["entertain"] = entertain
+    category["communication"] = communication
+    category["utilities"] = utilities
+    setGrafik(result, mostApps, mostAppsTime)
+
+})
+.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+
+
+// $.ajax({
+//     url: "https://www.rescuetime.com/anapi/data?key=B63tHs0dvkidjPYvvRtFjDxg7A1boJhPOccZJ1jE&restrict_kind=activity&restrict_begin="+yesterday+"&restrict_end="+today+"&format=json",
+//     method: "GET",
+//     solrUrl: 'http://www.mywebapp.com/solr',
+//     // headers: {  'Access-Control-Allow-Origin': '*' },
+//     success: function(res) {
+//         data = JSON.parse(JSON.stringify(res))
+//         for (let i = 0; i < data.rows.length; i++) {
+//             if (data.rows[i][5] == "2") {
+//                 timeSoftware = timeSoftware + data.rows[i][1]
+//                 software[countSouftware] = data.rows[i][3]
+//                 countSouftware++;
+//             }else if (data.rows[i][5] == "1") {
+//                 timeBisnis = timeBisnis + data.rows[i][1]
+//                 bisnis[countBisnis] = data.rows[i][3]
+//                 countBisnis++;
+//             }else if (data.rows[i][5] == "-2") {
+//                 timeEntertain = timeEntertain + data.rows[i][1]
+//                 entertain[countEntertain] = data.rows[i][3]
+//                 countEntertain++;
+//             }else if (data.rows[i][5] == "-1") {
+//                 timeCommunication = timeCommunication + data.rows[i][1]
+//                 communication[countCommunication] = data.rows[i][3]
+//                 countCommunication++;
+//             }else if (data.rows[i][5] == "0") {
+//                 timeUtilities = timeUtilities + data.rows[i][1]
+//                 utilities[countUtilities] = data.rows[i][3]
+//                 countUtilities++;
+//             }
+//             countAll = countAll + data.rows[i][1]
+//         }
+
+//         mostApps[0] = data.rows[0][3]
+//         mostApps[1] = data.rows[1][3]
+//         mostApps[2] = data.rows[2][3]
+//         mostApps[3] = data.rows[3][3]
+//         mostApps[4] = data.rows[4][3]
+//         mostAppsTime[0] = (data.rows[0][1]/3600).toLocaleString()
+//         mostAppsTime[1] = (data.rows[1][1]/3600).toLocaleString()
+//         mostAppsTime[2] = (data.rows[2][1]/3600).toLocaleString()
+//         mostAppsTime[3] = (data.rows[3][1]/3600).toLocaleString()
+//         mostAppsTime[4] = (data.rows[4][1]/3600).toLocaleString()
+//         result['software'] = (timeSoftware/3600).toLocaleString()
+//         result["bisnis"] = (timeBisnis/3600).toLocaleString()
+//         result["entertain"] = (timeEntertain/3600).toLocaleString()
+//         result["communication"] = (timeCommunication/3600).toLocaleString()
+//         result["utilities"] = (timeUtilities/3600).toLocaleString()
+//         category["software"] = software
+//         category["bisnis"] = bisnis
+//         category["entertain"] = entertain
+//         category["communication"] = communication
+//         category["utilities"] = utilities
+//         setGrafik(result, mostApps, mostAppsTime)
+//     },
+//     error: function (request, error) {
+//         console.log(" Can't do because: " + error);
+//     }
+// });
 
 // this for github get data from github
 $(document).ready(function(){
@@ -123,10 +183,10 @@ function setGrafik(result, mostApps, mostAppsTime) {
             type: 'bar'
         },
         title: {
-            text: 'Productivity one last month'
+            text: 'Productivity 30 last Days'
         },
         subtitle: {
-            text: 'Source: <a href="https://www.rescuetime.com/">rescuetime.com</a>'
+            text: 'Source: <a href="https://www.rescuetime.com/" target="_blank">rescuetime.com</a>'
         },
         xAxis: {
             categories: ['Software <br/> Development', 'Entertainment', 'Utilities', 'Communication <br/> Scheduling', 'Business'],
@@ -185,10 +245,10 @@ function setGrafik(result, mostApps, mostAppsTime) {
         type: 'pie'
         },
         title: {
-        text: 'Productivity Pulse'
+        text: 'Productivity Pulse 30 last Days'
         },
         subtitle: {
-            text: 'Source: <a href="https://www.rescuetime.com/">rescuetime.com</a>'
+            text: 'Source: <a href="https://www.rescuetime.com/" target="_blank">rescuetime.com</a>'
         },
         tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -222,10 +282,10 @@ function setGrafik(result, mostApps, mostAppsTime) {
 
     Highcharts.chart('apps', {
         title: {
-            text: 'Using Apps'
+            text: 'Using Apps 30 last Days'
         },
         subtitle: {
-            text: 'Source: <a href="https://www.rescuetime.com/">rescuetime.com</a>'
+            text: 'Source: <a href="https://www.rescuetime.com/" target="_blank" >rescuetime.com</a>'
         },
         tooltip: {
             valueSuffix: ' hours'
@@ -240,8 +300,4 @@ function setGrafik(result, mostApps, mostAppsTime) {
             showInLegend: true
         }]
     });    
-}
-
-function setHeader(xhr) {
-    xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
 }
