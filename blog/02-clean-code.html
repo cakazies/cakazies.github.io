@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Cakazies Blog - Connecting Postgres with Go Language</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body">
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__menu">
+                <input type="checkbox" id="menu-burger" class="header__menu-status" hidden="">
+                <label for="menu-burger" class="header__burger">
+                    <span></span>
+                </label>
+                <nav class="header__nav">
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog" class="header__nav-link text--uppercase">blog</a>
+                    </div>
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog/contact.html" class="header__nav-link text--uppercase">contacts</a>
+                    </div>
+                </nav>
+                <div class="header__logo">
+                    <a href="https://cakazies.github.io/" class="logo">
+                        cakazies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+    <div class="article">
+        <div class="container container--xl">
+            <div class="row">
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <h1 class="page__title article__title">Clean Code ? untuk apa sih ?</h1>
+                    <div class="page__subtitle article__subtitle">
+                        <div class="article__date">December 2019</div>
+                        <a href="#comments" class="article__stat"><i class="icon icon--comment"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="article__content">
+                        <div class="row">
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <p><img src="https://miro.medium.com/max/800/0*iCCefgmwk4qFkqcp.jpg" alt="images"></p>
+                                <p>oke guysss pada artikel selanjutnya akan dijelaskan tentang apa itu clean code, bagaimana cara untuk menulis kode yang baik dan langkah-langkah apa saja yang dibutuhkan untuk menulis kode yang baik. Oh iya jika kamu pingin membaca dalam bahasa inggris bisa membaca di medium si penulis di <a href="https://medium.com/@cakazies/clean-code-what-for-2d9252dd5247">sini</a> </p>
+                                <h2 id="desclaimer">Desclaimer</h2>
+                                <p>tips-tips berikut tidaklah pakem, penulis mengumpulkan beberapa sumber dan pengalaman penulis untuk memberikan tips tips berikut.</p>
+                                <p>oke well, biasanya seorang setelah lulus dari universitas atau mungkin dari SMK (yang ada codingnya) kebanyakan programmer akan membuat aplikasi pokoknya jalan dan selesai (kebanyakan yah, tidak semua) wkwkwkwk dan ini yang paling umum, yang memahami flow code yang dibuat hanyalah programmer dan Tuhan wwkwkwkwk ketika beberapa hari hanya Tuhan yang memahami code tersebut wkwkwkw 😂😂, sebenarnya ini tidaklah salah semua orang itu mempunyai progress pada setiap langkahnya dan karirnya, akan tetapi jika ini dilakukan selamnya itu sangatlah salah hehehe, karena mainset programmer itu harus learn forever, belajar selamnya jika kamu tidak belajar maka karir.mu hanya itu itu saja. Kembali dengan clean code, pada menulis sebuah code tidak hanya code jalan dan running dan selesai, akan tetapi code yang kita tulis harus jelas dan minimal orang-orang di tim kita bisa untuk membaca flow code yang telah kita buat.</p>
+                                <p>Contoh yang penulis gunakan menggunakan bahasa pemrograman Golang jika kamu belum familiar dengan golang bisa didiskusikan DM si penulis ini hehehehe, kenapa menggunakan Golang ? tidak ada alasan serius karena pada saat penulis menulis artikel ini penulis sedang bekerja menggunakan bahasa Golang</p>
+                                <h2 id="asal-mula-clean-code">Asal mula Clean Code</h2>
+                                <p>Clen code tercipta atau mulai menjadi perhatian ketika kita mulai development sebuah apps secara tim besar, karena sebuah tim minimal tahu bagaimana flow yang sudah dikerjakan oleh setim yang lain, karena jika seorang programmer mempunyai masalah maka tim yang lain mungkin bisa membantu menyelesaikan masalah tersebut, contoh yang lain adalah jika suatu company merekrut seorang programmer dan dia membuat beberapa aplikasi, kemudian setelah 2 tahun programmer itu resign, bagaimana jika programmer ini tidak menerapkan clean code, maka programmer selanjutnya akan kesulitan untuk bagaimana meneruskan code yang sudah ada ini (kasus ini banyak ditemukan dilapangan hehe termasuk dipenulis)</p>
+                                <p>Oke setelah sekian muqaddimah yang sudah penulis paparkan hehe, maka berikut adalah minimal ada beberapa yang harus dilakukan oleh programmer ketika menulis sebuah code </p>
+                                <ul>
+                                    <li>nama untuk variabel, function maupun class</li>
+                                    <li>nama dari folder itu sendiri </li>
+                                    <li>menulis komen pada code jika dibutuhkan</li>
+                                    <li>defactor code </li>
+                                    <li>menghapus <strong>dead code</strong></li>
+                                    <li>Buat Readme </li>
+                                    <li>Buat Dokumentasi</li>
+                                    <li>Buat unit testing</li>
+                                </ul>
+                                <p>oke setelah penulis jajarkan list, kemudian penulis akan menjabarkan satu persatu untuk list tersebut </p>
+                                <h2 id="1-nama-untuk-variable-folder-atau-class">1. Nama untuk Variable, Folder atau Class</h2>
+                                <p>Kebanyakan Programmer yang baru lulus dari universitas atau SMK menulis sebuah variabel atau function tergantung pada pikiran pertama mereka karena mereka berfocus pada kode yang kita tulis haruslah running. contohnya adalah ketika menulis variable hanya 1 huruf seperti
+                                    <code>var a, var b</code>, ini jika dirunning tetap jalan tapi apakah tim yang lain kaan faham dengan mksut variabel a,b gitu wkwkwkw, berikut contoh membuat variable yang salah</p>
+                                <p><img src="https://i.imgur.com/olZsUCN.png" alt="images"></p>
+                                <p>pada saat programmer menulis variable ini pasti programmer tersebut sangat faham kegunaan untuk variable ini, akan tetapi 3 bulan lagi membuka code yang sama, maka kebanyakan akan kebingunan bagaimana, untuk apa variable ini dibuat. Selanjutnya akan ditunjukkan bagaimana menulis code yang benar dan kebanyakan programmer sekarang gunakan </p>
+                                <p><img src="https://i.imgur.com/GZPlJmz.png" alt="images"></p>
+                                <p>bisa dilihat untuk penulisan variable jika satu kata maka semua ditulis menggunakan huruf kecil semua jika variable mengandung 2 kata maka huruf pertama kata kedua ditulis dengan Huruf Besar</p>
+                                <h2 id="2-nama-dari-folder-itu-sendiri">2. Nama dari Folder itu Sendiri</h2>
+                                <p>Bagaiman untuk Nama Folder, mengapa kita harus menggunakan nama folder yang sesuai, karena jika kamu sudah mengembangkan beberapa aplikasi yang besar, maka setiap modul kebanyakan akan dikelompokkan menggunakan folder (asumsi ini appsnya menggunakan monolitik) bagaimana jika modul siswa folder codenya dinamakan &quot;A&quot; atau &quot;ABC&quot;, tetap betul dan bisa running akan tetapi dikemudian hari akan kesusahan untuk mantenance module siswa tersebut.</p>
+                                <h2 id="3-menulis-komen-jika-dibutuhkan">3. Menulis Komen jika dibutuhkan</h2>
+                                <p>Komen, komen sangat dibutuhkan jika programmer membuat suatu fungsi tertentu, dan fungsi tersebut sangat tidak jelas penggunaannya, contohnya misal: membuat fungsi dimana didalam fungsi ada generate UUID, jika programmer tidak menjelaskan dengan komen, maka akan sulit juga untuk programmer yang lain akan memahami itu</p>
+                                <h2 id="4-defactor-code">4. Defactor Code</h2>
+                                <p>Apa itu refactor code, okey kebanyakan programmer itu bekerja dengan waktu yang tidak masuk akal, dengan waktu yang tidak jelas dan sangat mepet biasanya, maka banyak programmer akan menulis code yang redundan atau duplicate, mungkin ada flow yang bisa dibuatkan function tidak dibuatkan, maka ini harus ditinjau ulang untuk code yang telah kita tulis, apakah ada code yang bisa kita buat untuk function sehingga bisa mempercatik code yang telah kita buat.</p>
+                                <h2 id="5-menghapus-dead-code">5. Menghapus Dead Code</h2>
+                                <p>Di universitas kemungkinan besar istilah dead code tidak terdengar akan tetapi dilapngan sering dilakukan tetapi juga programmer tidak menyadari itu adalah dead code, Dead code adalah sebuah kumpulan code atau function yang telah di komen dan tidak digunakan dan sudah masuk di production, itu dinamakan dead code, karena itu kebanyakan start up, sebelum code yang akan masuk di production maka harus direview dulu oleh lead atau yang lain. karena bisa saling mengingatkan kalau ada dead code. </p>
+                                <h2 id="6-membuat-readme">6. Membuat Readme</h2>
+                                <p>Readme, mungkin ini juga istilah di yang jarang disebutkan di universitas, oleh karena itu membuat readme dilakukan oleh starup biasanya, mungkin sebagian company juga sudah melakukan standart ini, apa itu readme, readme adalah petunjuk bagaimana melakukan atau penginstalan terhadap repo atau aplikasi yang sudah dilakukan, contohnya kita membuat aplikasi menggunakan Golang, di readme harus dituliskan bagaimana untuk penginstalan aplikasinya dibutuhkan requirment apa saja yang harus disiapkan itu semua harus dijelaskan di readme, minimal orang yang baru saja menginstall aplikasi itu bisa running dengan membaca readme.</p>
+                                <h2 id="7-membuat-dokumentasi">7. Membuat Dokumentasi</h2>
+                                <p>Kamu bisa membayangian Facebook, Google atau Gojek buanyak aplikasi yang sudah dikembangkan dan sudah diintegrasi dengan aplikasi aplikasi yang lain tidak mempunyai dokumentasi dengan baik, jika ada orang yang mau integrasi dengan facebook contohnya, jika tidak ada dokumentasi dari facebook maka orang yang mau integrasi harus menghubungi pihak developer facebooknya, ini merupakan suatu flow yang tidaklah sehat, karena bisa mengganggu pihak developer yang mengembangkan suatu fitur tersebut, maka dibutuhkan untuk dokumentasi</p>
+                                <h2 id="8-membuat-unit-testing">8. Membuat Unit Testing</h2>
+                                <p>Oke ini yang terakhir kali, penggunaan Unit Tetsing kemungkinan terjadi di company yang sudah ready untuk product digitalnya karena unit testing ini akan sangat membantu untuk mengembangan selanjutnya yang disebut CI/CD, bisa di search di google, unit teting ini harus tulis oleh programmer dan mengantisipasi apa saja kemungkinan yang akan terjadi seperti contohnya jika suatu fitur membutuhkan parameter <code>id</code> kemudian tidak ada maka di saat unit tetsing harus ada untuk parameter tersebut.</p>
+
+                                <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div>
+                                    <h3>IF YOU HAVE SOME DISCUSSION ||~</h3>
+                                    <p>Just contact me at: </p>
+                                    <p>Email: cakazies@gmail.com </p>
+                                    <p>Instagram : <a href="https://www.instagram.com/cakazies/" target="_blank" rel="noopener noreferrer">@cakazies</a></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div id="disqus_thread"></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div class="article__shares">
+                        <div class="row">
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--twitter"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--facebook"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row nomargin">
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding">
+                    <p class="footer__text">© 2019</p>
+                </div>
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding"></div>
+                <div class="col col--xs-5 col--sm-6 col--md-1 nopadding">
+                    <div class="footer__mail">
+                        <a class="footer__mail-link" href="mailto:cakazies@gmail.com">cakazies@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col col--xs-7 col--sm-6 col--md-3 nopadding"></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    
+    var disqus_config = function () {
+        // this.page.url = '<?php echo get_permalink(); ?>';
+        // this.page.identifier = '<?php echo dsq_identifier_for_post($post); ?>';
+        this.page.url = 'http://localhost/mycv';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost/mycv/blog/connection-postgres-with-go-language.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sapiderman.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function readTextFile(file) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function() {
+                if (rawFile.readyState === 4) {
+                    if (rawFile.status === 200 || rawFile.status == 0) {
+                        var allText = rawFile.responseText;
+                        $(".article_contents").html(allText)
+                    } else {
+                        $(".article_contents").html("")
+                    }
+                } else {
+                    $(".article_contents").html("")
+                }
+            }
+            rawFile.send(null);
+        }
+    </script>
+
+</body>
+
+</html>

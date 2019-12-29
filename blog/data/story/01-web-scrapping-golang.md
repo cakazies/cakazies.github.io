@@ -1,6 +1,6 @@
 # Scraping(Mengambil Data dari Website) with Golang
 
-GAMBAR UNRUK SCRAPPING
+![images](https://www.octoparse.com/media/6720/001-efficient-web-scraping.png)
 
 ## Muqaddimah
 
@@ -21,16 +21,24 @@ Cara menginstall Golang “asumsinya sudah pada terinstall semua”
 bagaimana memilih website yang akan discrapping “ngapain anjir wkwkwk”
 Tidak Menjelaskan Semua sintaks Golang “yang Common”
 Pertama, yang saya gunakan library orang, karena memanfaatkan yang sudah ada lebih bijak dari pada membuat ulang dari awal wkwkwkwkw “aslinya sih males kalau buat dari awal” okey kita ambil dulu reponya kang PuerkitoBio di
-go get github.com/PuerkitoBio/goquery
+
+`go get github.com/PuerkitoBio/goquery`
+
 kalau perlu penjelasan untuk library ini bisa kunjungi repo beliau, documentasinya lengkap sih hehe
 jika sudah sukses next ke langkah selanjutnya, jika belum tutup laptop cari warteg, makan dulu wkwkwkwkw laper gan 💪
 pertama kita buat file namanya main.go “pastilah gimana mau ngoding coba kalau ga ada filenya hihihihi”
 kemudian kita buat structnya dulu, untuk apasih kita capek2 buat struct, yah gitu broo untuk biar keren wkwkw 😆, nggak struct nanti digunakan untuk repikasi data yang akan kita ambil kita buat dua struct saja berikut contohnyaaaaa
 
-kemudian pilih alamat atau wesite yang akan kita `COLONG` datanya hehehe, kali ini saya menggunakan bbc.com akan tetapi untuk list beritanya jadi URLnya agak panjang hehehe dan berikut code untuk mengakses website menggunakan golang
+![images](https://i.imgur.com/Qdag4Cz.png)
+
+kemudian pilih alamat atau wesite yang akan kita **COLONG** datanya hehehe, kali ini saya menggunakan bbc.com akan tetapi untuk list beritanya jadi URLnya agak panjang hehehe dan berikut code untuk mengakses website menggunakan golang
+
+![images](https://i.imgur.com/spbpA1g.png)
 
 untuk code http.Get digunakan untuk menghubungkan website yang akan kita ambil datanya, function tersebut mengembalikan 2 nilai, Response dan error, kemundian kondisi itu adalah checking apakah code kita berhasil terhubung dengan website tersebut atau tidak atau mungkin ada kemungkinan error yang lain, apakah tidak terhubung ke internet ataupun yang lain
 lanjuuutttt dengan codiiiiinggg
+
+![images](https://i.imgur.com/fHwodXD.png)
 
 untuk code diatas adalah berfungsi untuk mendapatkan semua file HTML yang ada di dalam website yang kita ambil, penggunaan fungsi “goquery” itu bukan dari code Golangnya akan tetapi dari repo kang “PuerkitoBio”, jika kepo apa aja daldam reponya silahkan
 untuk di lihat di sini github.com/PuerkitoBio/goquery
@@ -40,16 +48,24 @@ kemudian cari data yang anda inginkan saya contohkan untuk alamat diatas saya ak
 
 pada contoh kali ini yang akan saya ambil untuk data example adalah title dan content yang ada di list berita tersebut,langkahnya adalah pertama untuk cari class pada title tersebut untuk mencari classnya adalah shortkey “Ctrl+Shift+i” tekan secara bersamaan, kemudian akan tampil source HTML yang ada di website tersebut seperti contoh gambar dibawah ini
 
-
+![images](https://miro.medium.com/max/3840/1*LBJFWRKhrQ2ERslKj-xyJQ.png)
 
 cari class yang akan diambil datanya, berikut contoh pencarian class, class yang akan dicari harus mencakup semua berita yang akan kita ambil, jadi logicnya adalah sesudah kita ambil semua HTML yang ada , kita cari class yang mencakup semua berita-berita yang akan kita ambil, jika sudah mengambil class yang berisikan data-datanya kemudian cari spesifik data yang akan kita ambil, berikut adalah contoh untuk pencarian classnya
 
+![images](https://miro.medium.com/max/3830/1*Yqt0xMkhc4OvoLOjwOpT3A.png)
+
 jika sudah menemukan pencarian class yang mengandung semua konten yang akan kita ambil, maka implementasikan ke code golang
+
+![images](https://i.imgur.com/DfQxthL.png)
 
 dalam contoh diatas adalah kita sudah menggunakan class eagle, dimana pada class eagle mengandung semua konten yang akan kita ambil, next cari class yang mengandung title dan content , yang akan kita ambil
 
+![images](https://miro.medium.com/max/2976/1*XGR8aipWjHwEMSHB_X5l5g.png)
+
 next jika sudah mendapatkan class yang mengandung title dan content, masukkan kedalam code golang seperti berikut
+
+![images](https://i.imgur.com/1U3EKnn.png)
 
 dalam code golang diatas merupakan pengambilan title dan content kemudian dimasukkan kedalam array di struct, yang langkah berikutnya akan diubah menjadi json, atau bisa langsung dimasukkan ke dalam database yang dibutuhkan akan tetapi dalam kali ini saya akan mencontohkan diubah menjadi json
 sekian dulu artikel dari saya, article ini tidak mengajarkan untuk mengolah data secara sepihak, article ini untuk bahan learning dan improving untuk newbi seperti saya hehehe ampun suhu, jika ada salah kata, itu memang sengaja hehe tapi saya minta maaf dan jangan dimasukkan kedalam hati
-untuk sourcodenya bisa dilihat disini
+untuk sourcodenya bisa dilihat [disini](https://github.com/cakazies/go-scraping)

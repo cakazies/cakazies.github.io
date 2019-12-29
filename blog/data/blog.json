@@ -2,11 +2,20 @@
     "data" : [
         {
             "id" : "1",
-            "title" : "Connection Postgres with Go Language (Golang)",
-            "images" : "postgres-golang.png",
+            "title" : "Scraping(Mengambil Data dari Website) with Golang",
+            "images" : "https://www.octoparse.com/media/6720/001-efficient-web-scraping.png",
             "date" : "2 Agust 2019",
-            "link" : "connection-postgres-with-go-language.html",
-            "sort_content" : "How to connection Postgresql with Go Language and example get all data in table.",
+            "link" : "01-web-scrapping-golang.html",
+            "sort_content" : "Gampang kok scrapping dengan Golang dan bisa kok silahkan dibaca ...",
+            "long_content" : ""
+        },
+        {
+            "id" : "2",
+            "title" : "Clean Code ? untuk apa sih ? ",
+            "images" : "https://miro.medium.com/max/800/0*iCCefgmwk4qFkqcp.jpg",
+            "date" : "29 Desember 2019",
+            "link" : "02-clean-code.html",
+            "sort_content" : "Clean Code ga guna sih, koding aja sudah susah malah ada Clean Code ...",
             "long_content" : ""
         }
     ]

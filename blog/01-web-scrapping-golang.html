@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Cakazies Blog - Connecting Postgres with Go Language</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body">
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__menu">
+                <input type="checkbox" id="menu-burger" class="header__menu-status" hidden="">
+                <label for="menu-burger" class="header__burger">
+                    <span></span>
+                </label>
+                <nav class="header__nav">
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog" class="header__nav-link text--uppercase">blog</a>
+                    </div>
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog/contact.html" class="header__nav-link text--uppercase">contacts</a>
+                    </div>
+                </nav>
+                <div class="header__logo">
+                    <a href="https://cakazies.github.io/" class="logo">
+                        cakazies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+    <div class="article">
+        <div class="container container--xl">
+            <div class="row">
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <h1 class="page__title article__title">Scraping(Mengambil Data dari Website) with Golang</h1>
+                    <div class="page__subtitle article__subtitle">
+                        <div class="article__date">Sept 2019</div>
+                        <a href="#comments" class="article__stat"><i class="icon icon--comment"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="article__content">
+                        <div class="row">
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <p><img src="https://www.octoparse.com/media/6720/001-efficient-web-scraping.png" alt="images"></p>
+                                <h2 id="muqaddimah">Muqaddimah</h2>
+                                <p>Okey mungkin ini artikel pertama yang saya buat hehe :’) pertama kalinya saya nulis di blog saya jadi harap dimaklum yah hehe okey langsung saja, untuk kali ini saya akan membahas tentang Scrapping data dengan <a href="http://www.golang.org">Go</a> atau <a href="http://www.golang.org">Golang</a></p>
+                                <p>Mungkin ada beberapa orang menilai bahwa scrapping data itu ilegal jika tidak memiliki izin untuk mengambil datanya “mungkin di Indonesia belum ada UUDnya sih wkwkwk”. </p>
+                                <p>Jadi ini dibuat tidak untuk dipergunakan datanya, akan tetapi belajar dalam penggunaan Golang</p>
+                                <p>Okey lanjut broooo</p>
+                                <p>Apa sih scrapping, scrapping itu bahasa “KASAR”-nya adalah mencuri data dari website orang, <code>loh bro itu kan dosa mencuri hak milik orang lain, tanpa izin terlebih dahulu dengan pemiliknya nanti dosa dan masuk neraka bro jangan dilakukan</code>, okey sekian artikelnya tidak perlu dibahas, karena dosa wkwkwkwkwkw 🎵 okey memang benar scrapping memang mengambil data dari website orang dan “KEBANYAKAN” belum meminta izin pada si pemilik website tersebut yah memang sih sebagian besar diartikel ini juga ga izin ke pemilik website wkwkwkwkwk 😆, okey next gan, desclimer dulu sih “article ini untuk learning, jadi mengambil data di website jika tidak digunakan untuk hal yang menguntungkan sepihak tidak diperkenankan”</p>
+                                <h2 id="article-ini-tidak-membahas-tentang">Article ini tidak membahas tentang</h2>
+                                <p>Cara menginstall Golang “asumsinya sudah pada terinstall semua” bagaimana memilih website yang akan discrapping “ngapain anjir wkwkwk” Tidak Menjelaskan Semua sintaks Golang “yang Common” Pertama, yang saya gunakan library orang, karena memanfaatkan yang sudah ada lebih bijak dari pada membuat ulang dari awal wkwkwkwkw “aslinya sih males kalau buat dari awal” okey kita ambil dulu reponya kang PuerkitoBio di</p>
+                                <p><code>go get github.com/PuerkitoBio/goquery</code></p>
+                                <p>kalau perlu penjelasan untuk library ini bisa kunjungi repo beliau, documentasinya lengkap sih hehe jika sudah sukses next ke langkah selanjutnya, jika belum tutup laptop cari warteg, makan dulu wkwkwkwkw laper gan 💪 pertama kita buat file namanya main.go “pastilah gimana mau ngoding coba kalau ga ada filenya hihihihi” kemudian kita buat structnya dulu, untuk apasih kita capek2 buat struct, yah gitu broo untuk biar keren wkwkw 😆, nggak struct nanti digunakan untuk repikasi data yang akan kita ambil kita buat dua struct saja berikut contohnyaaaaa</p>
+                                <p><img src="https://i.imgur.com/Qdag4Cz.png" alt="images"></p>
+                                <p>kemudian pilih alamat atau wesite yang akan kita <strong>COLONG</strong> datanya hehehe, kali ini saya menggunakan bbc.com akan tetapi untuk list beritanya jadi URLnya agak panjang hehehe dan berikut code untuk mengakses website menggunakan golang</p>
+                                <p><img src="https://i.imgur.com/spbpA1g.png" alt="images"></p>
+                                <p>untuk code http.Get digunakan untuk menghubungkan website yang akan kita ambil datanya, function tersebut mengembalikan 2 nilai, Response dan error, kemundian kondisi itu adalah checking apakah code kita berhasil terhubung dengan website tersebut atau tidak atau mungkin ada kemungkinan error yang lain, apakah tidak terhubung ke internet ataupun yang lain lanjuuutttt dengan codiiiiinggg</p>
+                                <p><img src="https://i.imgur.com/fHwodXD.png" alt="images"></p>
+                                <p>untuk code diatas adalah berfungsi untuk mendapatkan semua file HTML yang ada di dalam website yang kita ambil, penggunaan fungsi “goquery” itu bukan dari code Golangnya akan tetapi dari repo kang “PuerkitoBio”, jika kepo apa aja daldam reponya silahkan untuk di lihat di sini github.com/PuerkitoBio/goquery kemudian cari data yang anda inginkan saya contohkan untuk alamat diatas saya akan mendapatkan list berita, gambar berita lek hehe</p>
+                                <h2 id="bagian-teliti-yang-saya-tidak-suka-hehe">Bagian Teliti yang saya tidak suka hehe</h2>
+                                <p>pada contoh kali ini yang akan saya ambil untuk data example adalah title dan content yang ada di list berita tersebut,langkahnya adalah pertama untuk cari class pada title tersebut untuk mencari classnya adalah shortkey “Ctrl+Shift+i” tekan secara bersamaan, kemudian akan tampil source HTML yang ada di website tersebut seperti contoh gambar dibawah ini</p>
+                                <p><img src="https://miro.medium.com/max/3840/1*LBJFWRKhrQ2ERslKj-xyJQ.png" alt="images"></p>
+                                <p>cari class yang akan diambil datanya, berikut contoh pencarian class, class yang akan dicari harus mencakup semua berita yang akan kita ambil, jadi logicnya adalah sesudah kita ambil semua HTML yang ada , kita cari class yang mencakup semua berita-berita yang akan kita ambil, jika sudah mengambil class yang berisikan data-datanya kemudian cari spesifik data yang akan kita ambil, berikut adalah contoh untuk pencarian classnya</p>
+                                <p><img src="https://miro.medium.com/max/3830/1*Yqt0xMkhc4OvoLOjwOpT3A.png" alt="images"></p>
+                                <p>jika sudah menemukan pencarian class yang mengandung semua konten yang akan kita ambil, maka implementasikan ke code golang</p>
+                                <p><img src="https://i.imgur.com/DfQxthL.png" alt="images"></p>
+                                <p>dalam contoh diatas adalah kita sudah menggunakan class eagle, dimana pada class eagle mengandung semua konten yang akan kita ambil, next cari class yang mengandung title dan content , yang akan kita ambil</p>
+                                <p><img src="https://miro.medium.com/max/2976/1*XGR8aipWjHwEMSHB_X5l5g.png" alt="images"></p>
+                                <p>next jika sudah mendapatkan class yang mengandung title dan content, masukkan kedalam code golang seperti berikut</p>
+                                <p><img src="https://i.imgur.com/1U3EKnn.png" alt="images"></p>
+                                <p>dalam code golang diatas merupakan pengambilan title dan content kemudian dimasukkan kedalam array di struct, yang langkah berikutnya akan diubah menjadi json, atau bisa langsung dimasukkan ke dalam database yang dibutuhkan akan tetapi dalam kali ini saya akan mencontohkan diubah menjadi json sekian dulu artikel dari saya, article ini tidak mengajarkan untuk mengolah data secara sepihak, article ini untuk bahan learning dan improving untuk newbi seperti saya hehehe ampun suhu, jika ada salah kata, itu memang sengaja hehe tapi saya minta maaf dan jangan dimasukkan kedalam hati untuk sourcodenya bisa dilihat <a href="https://github.com/cakazies/go-scraping">disini</a></p>
+                            <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div>
+                                    <h3>IF YOU HAVE SOME DISCUSSION ||~</h3>
+                                    <p>Just contact me at: </p>
+                                    <p>Email: cakazies@gmail.com </p>
+                                    <p>Instagram : <a href="https://www.instagram.com/cakazies/" target="_blank" rel="noopener noreferrer">@cakazies</a></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div id="disqus_thread"></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div class="article__shares">
+                        <div class="row">
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--twitter"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--facebook"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row nomargin">
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding">
+                    <p class="footer__text">© 2019</p>
+                </div>
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding"></div>
+                <div class="col col--xs-5 col--sm-6 col--md-1 nopadding">
+                    <div class="footer__mail">
+                        <a class="footer__mail-link" href="mailto:cakazies@gmail.com">cakazies@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col col--xs-7 col--sm-6 col--md-3 nopadding"></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    
+    var disqus_config = function () {
+        // this.page.url = '<?php echo get_permalink(); ?>';
+        // this.page.identifier = '<?php echo dsq_identifier_for_post($post); ?>';
+        this.page.url = 'http://localhost/mycv';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost/mycv/blog/connection-postgres-with-go-language.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sapiderman.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function readTextFile(file) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function() {
+                if (rawFile.readyState === 4) {
+                    if (rawFile.status === 200 || rawFile.status == 0) {
+                        var allText = rawFile.responseText;
+                        $(".article_contents").html(allText)
+                    } else {
+                        $(".article_contents").html("")
+                    }
+                } else {
+                    $(".article_contents").html("")
+                }
+            }
+            rawFile.send(null);
+        }
+    </script>
+
+</body>
+
+</html>

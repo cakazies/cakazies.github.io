@@ -49,38 +49,7 @@
                     <div class="blog__grid">
                         <!-- blog grid -->
                         <div class="row" id="blog">
-
-                            <!-- <div class="col col--sm-6 col--md-4">
-                                <a href="./article.html" class="blog__item">
-                                    <figure class="blog__item-img">
-                                        <img src="./img/post-1.jpg" alt="Mind power the ultimate success formula">
-                                    </figure>
-                                    <h5 class="blog__item-title">asdMind power the ultimate success formula</h5>
-                                    <p class="blog__item-text">What does it take to be successful? Ask around and you
-                                        will find different answers to the formula of success. The truth is, success
-                                        leaves clues and you can achieve the success in the area you desire by observing
-                                        the common qualities and principles.</p>
-                                    <p class="blog__item-date">Jan 23, 2018</p>
-                                </a>
-                            </div>
-
-                            <div class="col col--sm-6 col--md-4">
-                                <a href="./article.html" class="blog__item">
-                                    <figure class="blog__item-img">
-                                        <img src="./img/post-2.jpg"
-                                            alt="The small change that creates massive results in your life">
-                                    </figure>
-                                    <h5 class="blog__item-title">The small change that creates massive results in your
-                                        life</h5>
-                                    <p class="blog__item-text">Ask around and you will find different answers to the
-                                        formula of success. </p>
-                                    <p class="blog__item-date">Jan 23, 2018</p>
-                                </a>
-                            </div> -->
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -120,7 +89,7 @@
             $.getJSON("data/blog.json", function (data) {
                 let html2 = ""
                 for (let i = (data.data.length - 1); i >= 0 ; i--) {
-                    html2 += '<div class="col col--sm-6 col--md-4"><a href="./'+data.data[i].link+'" class="blog__item"><figure class="blog__item-img"><img src="./img/'+data.data[i].images+'" alt="Mind power the ultimate success formula"></figure><h5 class="blog__item-title">'+data.data[i].title+'</h5><p class="blog__item-text">'+data.data[i].sort_content+'</p><p class="blog__item-date">'+data.data[i].date+'</p></a></div>'
+                    html2 += '<div class="col col--sm-6 col--md-4"><a href="./'+data.data[i].link+'" class="blog__item"><figure class="blog__item-img"><img src="'+data.data[i].images+'" alt="Mind power the ultimate success formula"></figure><h5 class="blog__item-title">'+data.data[i].title+'</h5><p class="blog__item-text">'+data.data[i].sort_content+'</p><p class="blog__item-date">'+data.data[i].date+'</p></a></div>'
                 }
                 $("#blog").html(html2)
             });
