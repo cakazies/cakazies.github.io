@@ -17,6 +17,15 @@
             "link" : "02-clean-code.html",
             "sort_content" : "Clean Code ga guna sih, koding aja sudah susah malah ada Clean Code ...",
             "long_content" : ""
+        },
+        {
+            "id" : "3",
+            "title" : "Messaging Golang with RabbitMQ",
+            "images" : "https://miro.medium.com/max/3840/1*SxxtRzLRGqzqveRnt57Q6w.png",
+            "date" : "31 Desember 2019",
+            "link" : "03-messaging-rabbitmq-golang.html",
+            "sort_content" : "Apa sih RabbitMQ itu? bagaimana untuk penerapannya ? .... ",
+            "long_content" : ""
         }
     ]
 }
