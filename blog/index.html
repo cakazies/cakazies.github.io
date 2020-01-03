@@ -88,6 +88,7 @@
             let data
             $.getJSON("data/blog.json", function (data) {
                 let html2 = ""
+                console.log(data.data.length)
                 for (let i = (data.data.length - 1); i >= 0 ; i--) {
                     html2 += '<div class="col col--sm-6 col--md-4"><a href="./'+data.data[i].link+'" class="blog__item"><figure class="blog__item-img"><img src="'+data.data[i].images+'" alt="Mind power the ultimate success formula"></figure><h5 class="blog__item-title">'+data.data[i].title+'</h5><p class="blog__item-text">'+data.data[i].sort_content+'</p><p class="blog__item-date">'+data.data[i].date+'</p></a></div>'
                 }

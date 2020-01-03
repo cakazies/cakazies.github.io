@@ -26,6 +26,24 @@
             "link" : "03-messaging-rabbitmq-golang.html",
             "sort_content" : "Apa sih RabbitMQ itu? bagaimana untuk penerapannya ? .... ",
             "long_content" : ""
+        },
+        {
+            "id" : "4",
+            "title" : "Cerita `Menyenangkan` third party dengan salah satu Bank BUMN :v",
+            "images" : "https://miro.medium.com/max/1220/1*jOFNKZZ9qpOowlgHhTMhRQ.jpeg",
+            "date" : "02 Januari 2020",
+            "link" : "04-thirdparty-bumn.html",
+            "sort_content" : "Hmmmm siapa yah Bank BUMNnya, dan bagaimana yah keseruannya ... ",
+            "long_content" : ""
+        },
+        {
+            "id" : "5",
+            "title" : "Menambah Productife dengan Teknik Pomodoro",
+            "images" : "https://cdn-images-1.medium.com/max/2400/1*xmp_-0B-cO7_aYaNTikXRw.jpeg",
+            "date" : "03 Januari 2020",
+            "link" : "05-pomodoro-teknik.html",
+            "sort_content" : "Pomodoro Apa sih, hubungannya apa coba pomodoro dan produktif ... ",
+            "long_content" : ""
         }
     ]
 }
