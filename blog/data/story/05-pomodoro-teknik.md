@@ -9,7 +9,6 @@ Apa itu pomodoro ? pertanyaan ini pasti akan terfikirkan saat pertama kali anda 
 
 ok kali ini tidak hanya pengertiannya saja akan tetapi saya akan berbagi pengalaman menggunakan teknik pomodoro ini. untuk sejarahnya pomodoro bisa di baca di wikipedia yah. Pointnya Pomodoro adalah teknik untuk mengatur kapan kita harus focus untuk mengerjakan sesuatu dan kapan kita harus istirahat sebentar untuk menghilangkan stress.
 
-
 ## Untuk apa sih pomodoro
 Mostly pomodoro enthusias wkwkwkw menggunakan teknik ini untuk menunjang produktif untuk bidang masing-masing bisa untuk menulis, mengedit video, koding, atau mungkin bekerja juga bisa
 
@@ -26,7 +25,7 @@ Oke mari kita bahas untuk step by stepnya
 - Short break digunakan untuk istirahat, bisa digunakan untuk membalas chat do'i, (kecuali yang jomblo wkwkw) untuk buka facebook juga bisa, kencing juga harus kalau kebelet wkwkwk, ya intinya untuk relaksasi setelah focus itu sih, tergantung setiap orang bisa berbeda, biasanya sih untuk short break ini hanya 5 menit doang, yaaa masak focusnya 25 menit breaknya 30 menit wkwkwk ya tidak dong
 - Focus lagi karena setelah kita short break pastinya bisa focus yah jangan terbawa suasana setelah short break, untuk waktunya sama 25 menit
 - Long break, nah break yang kedua ini lumayan lama yaitu 15 menit, kamu bisa joging atau yang lain wkwkwk ya tidak dong, masak 15 menit di buat joging wkwkwk, 15 menit bisa di buat untuk minim jalan2 atau merenggangkan badan atau kegiatan yang lain bisa juga POP wkwkwkw, kemudian setelah ini hanya, ulang kembali ke step yang awal sampai waktu kerjamu habis. 
-
+t
 ## Tips dalam menggunakan teknik Pomodoro
 ini tips bukan dari official dari pomodoronya gayn,ini personal opinion saja mungkin bisa penulis share
 - tutup semua web whatsapp, slack, telegram, atau sosmed karena bisa mengganggu konsentrasi dari step focus 
