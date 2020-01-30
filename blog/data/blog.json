@@ -44,6 +44,15 @@
             "link" : "05-pomodoro-teknik.html",
             "sort_content" : "Pomodoro Apa sih, hubungannya apa coba pomodoro dan produktif ... ",
             "long_content" : ""
+        },
+        {
+            "id" : "6",
+            "title" : "Membuat Documentasi API di Repo ? Mudah kok ",
+            "images" : "https://miro.medium.com/max/8512/1*wSrDpINGh-M-46D_-fGG4A.jpeg",
+            "date" : "30 Januari 2020",
+            "link" : "06-documentation-api.html",
+            "sort_content" : "Membuat Dokumentasi tidak seribet yang kelihatannya kok, ga percaya? coba baca ... ",
+            "long_content" : ""
         }
     ]
 }
