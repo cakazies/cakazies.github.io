@@ -1,0 +1,250 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Membuat Documentasi API di Repo ? Mudah kok  </title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body">
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__menu">
+                <input type="checkbox" id="menu-burger" class="header__menu-status" hidden="">
+                <label for="menu-burger" class="header__burger">
+                    <span></span>
+                </label>
+                <nav class="header__nav">
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog" class="header__nav-link text--uppercase">blog</a>
+                    </div>
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog/contact.html" class="header__nav-link text--uppercase">contacts</a>
+                    </div>
+                </nav>
+                <div class="header__logo">
+                    <a href="https://cakazies.github.io/" class="logo">
+                        cakazies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+    <div class="article">
+        <div class="container container--xl">
+            <div class="row">
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <h1 class="page__title article__title">Membuat Documentasi API di Repo ? Mudah kok </h1>
+                    <div class="page__subtitle article__subtitle">
+                        <div class="article__date">30 Januari 2020</div>
+                        <a href="#comments" class="article__stat"><i class="icon icon--comment"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="article__content">
+                        <div class="row">
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h1 id="cerita-menyenangkan-third-party-dengan-salah-satu-bank-bumn-v"></h1>
+                                <p><img src="https://miro.medium.com/max/8512/1*wSrDpINGh-M-46D_-fGG4A.jpeg" alt="images"></p>
+                                <p>Oke Guyss, sudah 3 minggu belum membuat artikel lagi heheh karena dikantor masih sibuk dengan kerjaan ya biasa wkwkwkw sok sibuk anjeeerr, oke kali ini mungkin saya akan share untuk bagaimana membuat dokumentasi API khususnya untuk backend yah. akan tetapi bisa juga kok buat bahan bacaan untuk front end atau yang yang lain mungkin bisa jadi untuk referensi</p>
+                                <h2 id="fungsi-dokumentasi">Fungsi Dokumentasi</h2>
+                                <p>okey, apa sih fungsinya dokumentasi ? mungkin ini detailnya salah satu point yang saya telah jabarkan di artikel saya sebelumnya clean code, mungkin di situ di singgung dengan salah satu clean code adalah adanya documentasi, lalu fungsinya dokumentasi itu sendiri apa sih, oke fungsinya dokumentasi itu dari kata dokumentasi dari sumber <a href="https://en.wikipedia.org/wiki/Documentation">wikipedia</a> adalah tata cara untuk menggunakan sesuatu, dalam hal ini yang kita bicarakan adalah repo dari sebuah code jadi bisa digabungkan pengertiannya adalah tata cara untuk menggunakan sebuah library baik itu API ataupun apa saja fitur dokumentasi itu sendiri, dalam hal ini kita akan membahas bagaimana membuat dokumentasi yang mudah untuk dibaca. </p>
+                                <h2 id="prolog">Prolog</h2>
+                                <p>Sebelum membuat dokumentasi kita harus tau apa saja yang ada di dalam repo yang akan kita buat itu, minimal cara menggunakan repo itu sendiri, okey mungkin contoh-contoh yang saya akan buat ini akan saya contohkan di <a href="https://github.com/">github</a> akan tetapi bisa digunakan untuk yang lain juga. okey biasanya dalam sebuah company atau startup mungkin beberapa menyebutnya engineer spec, nah itu sama dengan documentation API itu sendiri, hanya saja biasanya menggunakan <a href="https://www.atlassian.com/software/jira">Jira software</a> atau yang biasa menggunakan PDF tergantung dari kebutuhan company itu sendiri, akan tetapi juga biasanya digunakan fitur dari github/ gitlab yaitu <a href="https://help.github.com/en/github/building-a-strong-community/documenting-your-project-with-wikis"><code>wiki</code></a> balik lagi tergantung perusahaannya untuk kebutuhannya bagaimana. </p>
+                                <h2 id="documentation">Documentation</h2>
+                                <p>Oke langsung saya yah, pertama bisa tentukan apa saja yang akan menjadi API yang sudah kamu selesaikan contohnya ada beberapa nih </p>
+                                <ul>
+                                    <li>API Get Room </li>
+                                    <li>API Create Room </li>
+                                    <li>API Update Room </li>
+                                    <li>API Delete Room </li>
+                                    <li>API Get Detail Room </li>
+                                </ul>
+                                <p>contohnya kamu punya 5 API yang akan digunakan, seperti yang diatas, jika kamu sering menggunakan <a href="https://www.getpostman.com/">POSTMAN</a> atau <a href="https://insomnia.rest/">Insomnia</a> sudah biasa mengenal istilah authorization, params, data body, URL, host dan lain-lain </p>
+                                <h3 id="step-pertama">Step pertama</h3>
+                                <p>Jelaskan setiap endpoint/API yang kamu buat di setiap penjelasan API, contohnya jika kamu membuat <code>API Get Room</code>, API itu digunakan untuk apa saja, dan digunakannya untuk apa, Methodnya apa, Urlnya apa, bisa digunakan tabel untuk memperindah dan mempermudah penjelasan, contohnya disini</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Command</th>
+                                            <th>Method</th>
+                                            <th>Routes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Get Room</td>
+                                            <td>GET</td>
+                                            <td><code>api/v1/rooms</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3 id="step-kedua">Step Kedua</h3>
+                                <p>Dalam setiap API kebanyakan menggunakan Authorization, kecuali API yang consumenya untuk public, untuk step kedua adalah jelaskan setiap API memakai authorization apa, apakah menggunakan token, Basic Auth, Bearer atau yang lainnya.</p>
+                                <h3 id="step-three">Step three</h3>
+                                <p>Jika ada parameter yang digunakan tuliskan juga, bisa dijelaskan dalam bentuk table atau mungkin bisa list saja,contohnya adalah disini </p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>KEY</th>
+                                            <th>VALUE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>page</td>
+                                            <td>1,10,9,all</td>
+                                        </tr>
+                                        <tr>
+                                            <td>filter</td>
+                                            <td>17,72,100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>shortby</td>
+                                            <td>id,desc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>limit</td>
+                                            <td>10,100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3 id="step-four">Step Four</h3>
+                                <p>Jelaskan juga apakah pada API yang akan kamu buat itu menggunakan data Request,data yang bisa di kirim bisa bermacam-macam bisa berupa form, graphql, json akan tetapi kebanyakan data request menggunakan <code>JSON</code>, berikut contohnya </p>
+                                
+                                <script src="https://gist.github.com/cakazies/45503ef394c6ed38d25b8e5f6a01894f.js"></script>
+                                <h3 id="step-five">Step Five</h3>
+                                <p>Setiap request yang akan dilakukan pastinya akan mendapatkan response dari API itu sendiri, entah success atau gagal atau yang lain, tergantung dari request kita sendiri apakah ada something yang kurang atau bagaimana:</p>
+                                <ul>
+                                    <li>Request Success</li>
+                                </ul>
+                                
+                                <script src="https://gist.github.com/cakazies/3947dbfd51cd5587dafba368cdb59239.js"></script>
+                                <ul>
+                                    <li>Request ID not found</li>
+                                </ul>
+                                
+                                <script src="https://gist.github.com/cakazies/bbcd7cb30a6d70ce09b1c4bdb9a79a84.js"></script>
+                                <ul>
+                                    <li>Request Authorization Required</li>
+                                </ul>
+                                
+                                <script src="https://gist.github.com/cakazies/e15a5b7b66ee141d830d7f9fbe36e624.js"></script>
+                                <ul>
+                                    <li>Request Server Error</li>
+                                </ul>
+                                <script src="https://gist.github.com/cakazies/b4ed4f2d89bdb06768419c68cfa12bee.js"></script>
+                                <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div>
+                                    <h3>IF YOU HAVE SOME DISCUSSION ||~</h3>
+                                    <p>Just contact me at: </p>
+                                    <p>Email: cakazies@gmail.com </p>
+                                    <p>Instagram : <a href="https://www.instagram.com/cakazies/" target="_blank" rel="noopener noreferrer">@cakazies</a></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div id="disqus_thread"></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div class="article__shares">
+                        <div class="row">
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--twitter"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--facebook"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row nomargin">
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding">
+                    <p class="footer__text">© 2019</p>
+                </div>
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding"></div>
+                <div class="col col--xs-5 col--sm-6 col--md-1 nopadding">
+                    <div class="footer__mail">
+                        <a class="footer__mail-link" href="mailto:cakazies@gmail.com">cakazies@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col col--xs-7 col--sm-6 col--md-3 nopadding"></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    
+    var disqus_config = function () {
+        // this.page.url = '<?php echo get_permalink(); ?>';
+        // this.page.identifier = '<?php echo dsq_identifier_for_post($post); ?>';
+        this.page.url = 'http://localhost/mycv';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost/mycv/blog/connection-postgres-with-go-language.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sapiderman.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function readTextFile(file) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function() {
+                if (rawFile.readyState === 4) {
+                    if (rawFile.status === 200 || rawFile.status == 0) {
+                        var allText = rawFile.responseText;
+                        $(".article_contents").html(allText)
+                    } else {
+                        $(".article_contents").html("")
+                    }
+                } else {
+                    $(".article_contents").html("")
+                }
+            }
+            rawFile.send(null);
+        }
+    </script>
+
+</body>
+
+</html>
