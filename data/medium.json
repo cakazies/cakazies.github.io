@@ -1,0 +1,64 @@
+{
+    "data" : [
+        {
+            "name" : "Simple REST API Go using Revel Framework and CockroachDB 🐞",
+            "img": "https://miro.medium.com/max/8064/1*aLEMQNKbgqdtcboysOp-sg.jpeg",
+            "link" : "https://medium.com/@cakazies/simple-rest-api-go-using-revel-framework-and-cockroachdb-a96c8df1e1eb",
+            "date" : "24 Feb 2020"
+        },
+        {
+            "name" : "RDL (Rekening Dana Lender) for Lenders Account",
+            "img": "https://miro.medium.com/max/14720/1*jlkY8-8btaqRiX1cVDDwCg.jpeg",
+            "link" : "https://medium.com/crowde/rdl-rekening-dana-lender-for-lenders-account-5e1332b3db92",
+            "date" : "11 Feb 2020"
+        },
+        {
+            "name" : "Make Documentation API in your repo ? it’s easy ❤️❤️❤️",
+            "img": "https://miro.medium.com/max/8512/1*wSrDpINGh-M-46D_-fGG4A.jpeg",
+            "link" : "https://medium.com/@cakazies/make-documentation-api-in-your-repo-its-easy-%EF%B8%8F-%EF%B8%8F-%EF%B8%8F-5fb2f1de8983",
+            "date" : "30 Jan 2020"
+        },
+        {
+            "name" : "Still Productive with Pomodoro Technique 🍅🍅🍅",
+            "img": "https://miro.medium.com/max/4000/1*xmp_-0B-cO7_aYaNTikXRw.jpeg",
+            "link" : "https://medium.com/@cakazies/still-productive-with-pomodoro-technique-4031fef5bef2",
+            "date" : "06 Jan 2020"
+        },
+        {
+            "name" : "Messaging Golang with RabbitMQ 📨",
+            "img": "https://miro.medium.com/max/3840/1*SxxtRzLRGqzqveRnt57Q6w.png",
+            "link" : "https://medium.com/@cakazies/messaging-golang-with-rabbitmq-2ed1ccf8314",
+            "date" : "02 Jan 2020"
+        },
+        {
+            "name" : "What’s New from The Tech Department at CROWDE ???",
+            "img": "https://miro.medium.com/max/1360/1*GeW8JWAOLSlOOT6eKwTxbQ.png",
+            "link" : "https://medium.com/crowde/whats-new-from-the-tech-department-at-crowde-cc42e53a3ec8",
+            "date" : "27 Des 2019"
+        },
+        {
+            "name" : "Dockerize Golang Apps? easy 🤔?",
+            "img": "https://miro.medium.com/max/3840/1*_mFEdypZ151fZ5lBp3AUlQ.png",
+            "link" : "https://medium.com/@cakazies/dockerize-golang-apps-easy-342eb2801727",
+            "date" : "20 Des 2019"
+        },
+        {
+            "name" : "Implementation gRpPC and protobuf with Golang",
+            "img": "https://miro.medium.com/max/4728/1*2BLmC72ELkiThrMbhzIONw.png",
+            "link" : "https://medium.com/@cakazies/implementation-grppc-and-protobuf-with-golang-33068ecb7391",
+            "date" : "10 Des 2019"
+        },
+        {
+            "name" : "Connecting Postgres with Go Language (Golang)",
+            "img": "https://miro.medium.com/max/1740/0*r_w39EG8xj_1eMSr.png",
+            "link" : "https://medium.com/@cakazies/connecting-postgres-with-go-language-golang-89ff16746851",
+            "date" : "07 Des 2019"
+        },
+        {
+            "name" : "Clean Code ? What For ? 😅",
+            "img": "",
+            "link" : "https://medium.com/@cakazies/clean-code-what-for-2d9252dd5247",
+            "date" : "07 Des 2019"
+        }
+    ]
+}
