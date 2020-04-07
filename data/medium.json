@@ -4,60 +4,70 @@
             "name" : "Simple REST API Go using Revel Framework and CockroachDB 🐞",
             "img": "https://miro.medium.com/max/8064/1*aLEMQNKbgqdtcboysOp-sg.jpeg",
             "link" : "https://medium.com/@cakazies/simple-rest-api-go-using-revel-framework-and-cockroachdb-a96c8df1e1eb",
+            "resume" : "Hello guys, okey this article will simple explain about implementation Revel Framework REST API, you can see in repo revel in Github, first commit in 2011 with Ropfig with Go Play, Wow this is amazing I think, almost 9 years development. Well this article not talking about history revel framework but, in now how to use it in REST API",
             "date" : "24 Feb 2020"
         },
         {
             "name" : "RDL (Rekening Dana Lender) for Lenders Account",
             "img": "https://miro.medium.com/max/14720/1*jlkY8-8btaqRiX1cVDDwCg.jpeg",
             "link" : "https://medium.com/crowde/rdl-rekening-dana-lender-for-lenders-account-5e1332b3db92",
+            "resume" : "Hello guys …. I have good news in CROWDE, now our lenders in CROWDE already using RDL 😍, But wait, do you guys know what is RDL? RDL (Rekening Dana Lenders), this is for account bank only for Lenders transaction using peer to peer lending, and this rekening or account only for transaction peer to peer lending.",
             "date" : "11 Feb 2020"
         },
         {
             "name" : "Make Documentation API in your repo ? it’s easy ❤️❤️❤️",
             "img": "https://miro.medium.com/max/8512/1*wSrDpINGh-M-46D_-fGG4A.jpeg",
             "link" : "https://medium.com/@cakazies/make-documentation-api-in-your-repo-its-easy-%EF%B8%8F-%EF%B8%8F-%EF%B8%8F-5fb2f1de8983",
+            "resume" : "Hello guys, after 2 weeks doesn’t make an article in medium hehe, ok let me share about how to make documentation API for our repo, how to use our repo and how to use each endpoint in our repo.",
             "date" : "30 Jan 2020"
         },
         {
             "name" : "Still Productive with Pomodoro Technique 🍅🍅🍅",
             "img": "https://miro.medium.com/max/4000/1*xmp_-0B-cO7_aYaNTikXRw.jpeg",
             "link" : "https://medium.com/@cakazies/still-productive-with-pomodoro-technique-4031fef5bef2",
+            "resume" : "What is Pomodoro? actually this question habitually if you hear the first time, you can buy this book for full definition or you can read in wikipedia, the point of Pomodoro is technique for time management, when we must focus and when we must be break.",
             "date" : "06 Jan 2020"
         },
         {
             "name" : "Messaging Golang with RabbitMQ 📨",
             "img": "https://miro.medium.com/max/3840/1*SxxtRzLRGqzqveRnt57Q6w.png",
             "link" : "https://medium.com/@cakazies/messaging-golang-with-rabbitmq-2ed1ccf8314",
+            "resume" : "What is messaging or message broker? For this definition you can read in wikipedia actually hehe, the point from message broker is like postman, postman task is deliver letter user A to user B. Message broker commonly use like RabbitMQ, Kafka, NSQ but this article only explain about RabbitMQ.",
             "date" : "02 Jan 2020"
         },
         {
             "name" : "What’s New from The Tech Department at CROWDE ???",
             "img": "https://miro.medium.com/max/1360/1*GeW8JWAOLSlOOT6eKwTxbQ.png",
             "link" : "https://medium.com/crowde/whats-new-from-the-tech-department-at-crowde-cc42e53a3ec8",
+            "resume" : "Hello guys, wow! This is the first article that specially made for the introduction of the Tech Department in Crowde. Well! The introduction for Crowde itself can be seen in other articles on the Crowde medium or you can directly observe at the Crowde website.",
             "date" : "27 Des 2019"
         },
         {
             "name" : "Dockerize Golang Apps? easy 🤔?",
             "img": "https://miro.medium.com/max/3840/1*_mFEdypZ151fZ5lBp3AUlQ.png",
             "link" : "https://medium.com/@cakazies/dockerize-golang-apps-easy-342eb2801727",
+            "resume" : "Before we talk about Dockerize you should know about Docker, what is docker ? point of docker is making easier built, deploy and run an application using containers, the complete definition you can read this documentation, you can deploy your application in Kubernetes or the others using Docker.",
             "date" : "20 Des 2019"
         },
         {
             "name" : "Implementation gRpPC and protobuf with Golang",
             "img": "https://miro.medium.com/max/4728/1*2BLmC72ELkiThrMbhzIONw.png",
             "link" : "https://medium.com/@cakazies/implementation-grppc-and-protobuf-with-golang-33068ecb7391",
+            "resume" : "",
             "date" : "10 Des 2019"
         },
         {
             "name" : "Connecting Postgres with Go Language (Golang)",
             "img": "https://miro.medium.com/max/1740/0*r_w39EG8xj_1eMSr.png",
             "link" : "https://medium.com/@cakazies/connecting-postgres-with-go-language-golang-89ff16746851",
+            "resume" : "",
             "date" : "07 Des 2019"
         },
         {
             "name" : "Clean Code ? What For ? 😅",
             "img": "",
             "link" : "https://medium.com/@cakazies/clean-code-what-for-2d9252dd5247",
+            "resume" : "",
             "date" : "07 Des 2019"
         }
     ]
