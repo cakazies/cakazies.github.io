@@ -1,0 +1,213 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Membuat Rest API Golang dengan framework Revel dengan CockroachDB  </title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body">
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__menu">
+                <input type="checkbox" id="menu-burger" class="header__menu-status" hidden="">
+                <label for="menu-burger" class="header__burger">
+                    <span></span>
+                </label>
+                <nav class="header__nav">
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog" class="header__nav-link text--uppercase">blog</a>
+                    </div>
+                    <div class="header__nav-item">
+                        <a href="https://cakazies.github.io/blog/contact.html" class="header__nav-link text--uppercase">contacts</a>
+                    </div>
+                </nav>
+                <div class="header__logo">
+                    <a href="https://cakazies.github.io/" class="logo">
+                        cakazies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+    <div class="article">
+        <div class="container container--xl">
+            <div class="row">
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <h1 class="page__title article__title">Membuat Rest API Golang dengan framework Revel dengan CockroachDB  🐞 </h1>
+                    <div class="page__subtitle article__subtitle">
+                        <div class="article__date">09 April 2020</div>
+                        <a href="#comments" class="article__stat"><i class="icon icon--comment"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="article__content">
+                        <div class="row">
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <p><img src="https://miro.medium.com/max/4800/1*aLEMQNKbgqdtcboysOp-sg.jpeg" alt="images"></p>
+                                <h2 id="installasi-revel">Installasi Revel</h2>
+                                <p>Hello Guys, sudah lama yah ga update untuk blog saya lagi hehehe, okey untuk sekarang saya akan share actually uda beberapa minggu yang lalu sih harusnya article ini dibuat ya apa oleh baut wkwkwk yang penting bisa di buat yah wkwkwk, kali ini gw akan share tentang bagaimana sih penggunaan framework revel di golang, ada beberapa startup sih yang sudah menggunakan framework ini untuk production, ga usah gw sebutkan yah ngapain wkwkwkwk, okey untuk project ini saya document asikan juga di github saya, nanti di akhir saya akan share untuk linknya yah, check it out ...</p>
+                                <p>Anyway bro, agak kurang umum ya database yang akan saya gunakan, ini juga lagi booming sih untuk cockroachdb (which is kecoa wkwkw) yah memang jika kamu buka <a href="https://www.cockroachlabs.com/">website</a> resminya akan terpapar semua penjelasan dan documentasi untuk database ini, FYI cockroachdb ini kyk postgresql loe hampir persis malahan untuk detailnya bisa di check di websitenya yah soalnya juga untuk asbabun nuzulnya juga ga begitu dalami wkwkwk ya maap </p>
+                                <p>Mulai dari frameworknya golang yah Revel untuk website resminya bisa di check <a href="github.com/revel/revel">githubnya</a> revel, okey untuk instalasinya kita get repositorynya revel yah, untuk commandnya biasa pake <code>go get</code></p>
+                                <ul>
+                                    <li>go get github.com/revel/revel </li>
+                                    <li>go get github.com/revel/cmd/revel</li>
+                                </ul>
+                                <p>jangan lupa dua duanya di go get yah,kalau sudah di go get pastikan untuk check apakah revel sudah terinstall apa belum, jika sudah masuk di directory <code>GOPATH</code> biasanya di <code>go/src</code> kemudian ketikkan command ini</p>
+                                <blockquote>
+                                    <p>revel version</p>
+                                </blockquote>
+                                <p>jika muncul informasi revel framework-nya versi berapa maka yeeee revel sudah terinstall dilaptop, sekarang nextnya adalah create project menggunakan command dari revel juga bisa loh dengan command <code>revel new your_project</code> maka akan secara otomatis generate <em>boilerplate</em> khusus untuk revel project, nah folder-folder apa saja yang tercreate adalah </p>
+                                <ul>
+                                    <li>app </li>
+                                    <li>conf </li>
+                                    <li>message </li>
+                                    <li>public </li>
+                                    <li>test</li>
+                                    <li>utils </li>
+                                </ul>
+                                <p>untuk check apakah sudah bisa running project revel kamu bisa gunakan command ini </p>
+                                <blockquote>
+                                    <p>revel run -a your_project</p>
+                                </blockquote>
+                                <p>jika tidak ada error maka kamu bisa open browser kamu bisa menggunakan chrome, firefox ataupun safari jangan IE yah wkwkwkwk tapi juga gpp sih takutnya ga umum ga works wkwkwkwk, okey jika sudah masukkan alamat <strong><code>localhost:9000</code></strong> karena default port di revel adalah 9000 akan tetapi bisa di adjust sesuai dengan kebutuhan jika port itu sudah digunakan, okey jika tidak terjadi masalah maka akan muncul tulisan <strong><code>IT Works!</code></strong> maka project revel kamu sudah bisa digunakan dan kamu bisa tambahin sesuai dengan kebutuhan kamu....</p>
+                                <h2 id="config-database">Config Database</h2>
+                                <p>Sebelumnya sudah di singgung kita akan menggunakan database cockroachDB its means mostly hampir sama dengan postgresql jadi tenang bro wkwkwkwk okey,, </p>
+                                <blockquote>
+                                    <p>untuk framework revel bisa kamu tambahkan folder yang biasa kamu pakai, contohnya biasa menggunakan folder <code>config</code> bisa di tambahkan sesuai dengan kebutuhan</p>
+                                </blockquote>
+                                <p>Kita buat koneksi dahulu yah untuk ke cockroachdbnya like this: </p>
+                                <script src="https://gist.github.com/cakazies/52ea9d602e513b8725cef9209858bf05.js"></script>
+                                
+                                <p>Bisa dilihat untuk contohnya koneksi untuk cockroachdb, untuk drivernya masih menggunakan postgresql, di documentasinya juga masih menggunakan postgresql, its okey kita juga akan mencoba apa bedanya nantinya wkwkwk, FYI untuk cara menginstall cockroachDB tidak di jelaskan pada article ini yah jadi bisa lihat <a href="https://www.cockroachlabs.com/docs/stable/install-cockroachdb-mac.html">disini</a>, nextnya bisa di change untuk koneksinya like user, password, dbname bisa di compare dengan koneksi yang sudah di install yah. Supaya kita bisa langsung praktek untuk bikin API gw sudah siapkan dummy data untuk digunakan yah supaya bisa cepat implement, berikut dummydata yang akan digunakan: </p>
+                                <script src="https://gist.github.com/cakazies/35ae28b256a4bf7fc004a9a9459474d1.js"></script>
+                                
+                                <h2 id="create-routing">Create Routing</h2>
+                                <p>Untuk pertama kali bisa dilihat di file <code>your_project/conf/routes</code> kamu bisa melihat banyak code yang default sudah ada, tapi kamu bisa focus untuk code ini </p>
+                                <pre><code>GET     /                                       <span class="hljs-keyword">App</span>.<span class="hljs-built_in">Index</span>
+                                </code></pre>
+                                <p>Code ini berfungsi untuk mengatur route yang nanti akan kamu buat di apps revel ini, bisa kamu adjust sesuai dengan kebutuhan, okey contohnya kita akan menambahkan route student </p>
+                                <pre><code>GET     /                          <span class="hljs-keyword">App</span>.<span class="hljs-built_in">Index</span></code></pre>
+                                <pre><code>GET     /students                  <span class="hljs-keyword">App</span>.<span class="hljs-built_in">GetStudents</span></code></pre>
+                                                                
+                                <p>untuk <code>GET</code> itu unutk mengatur method http yang akan kita buat, bisa berbentuk <code>POST</code>, <code>PUT</code> atau yang lainnya, untuk <code>/student</code> itu digunakan untuk alamat setelah <code>host</code> yang akan ditambahkan, nanti route ini yang akan digunakan untuk memanggil code yang akan telah dibuat. <code>App.GetStudents</code> untuk code ini adalah untuk memanggil function yang akan kita buat setelah ini yaitu <code>GetStudents</code>, coba buka file di <code>app/controllers/app.go</code> kamu bisa tambahkan untuk membuat function <code>GetStudents</code> like this: </p>
+                                <script src="https://gist.github.com/cakazies/5ddf0680b4a9dfc7ed302ba1d750b2a1.js"></script>
+                                
+                                <p>In this case, query diletakkan di dalam controller untuk project yang real tidak disarankan yah tapi harus diletakkan di folder tertentu like models, bisa di adjust sesuai dengan kebutuhan sih its okey, selanjutnya adalah bagaimana testing untuk API yang telah kita buat work apa tidak hehehe, untuk testingnya bisa menggunakan <code>postman</code> atau <code>insomnia</code> terserah dan tergantung selera masing-masing. Ketikkan URL <code>localhost:9000/students</code> dengan method <code>GET</code>, jika tidak ada error dan pastikan projectnya sudah di running, maka akan muncul response seperti ini </p>
+                                <script src="https://gist.github.com/cakazies/fd5b830cc2a6de4216c01c1d53379704.js"></script>
+                                
+                                <p>Yeay mungkin cukup sekian untuk articlenya sedikit memberi wawasan sih bahwa mostly sampai saat ini framework yang ada di golang belum sepenuhnya mengatur end to end jadi lebih bisa di adjust dan depends you needed, untuk testimonunya menggunakan revel sih, for me ga terlalu enak sih masih lebih suka menggunakan GIN atau MUX untuk routernya wkwkwkwk tapi coba2 aja sih okey well done bro articlenya, oh iya untuk code-nya sudah ada get detal, update, create data, delete data juga sih tapi kebanyakn untuk saya buat articlenya jadi satu monggo di cicipi saja yah untuk codenya di <a href="https://github.com/cakazies/go-reco">github</a> </p>
+
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div>
+                                    <h3>IF YOU HAVE SOME DISCUSSION ||~</h3>
+                                    <p>Just contact me at: </p>
+                                    <p>Email: cakazies@gmail.com </p>
+                                    <p>Instagram : <a href="https://www.instagram.com/cakazies/" target="_blank" rel="noopener noreferrer">@cakazies</a></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <div class="article_contents col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div id="disqus_thread"></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div class="article__shares">
+                        <div class="row">
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--twitter"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--facebook"></i></a>
+                                </div>
+                                <div class="article__shares-icon">
+                                    <a href="#"><i class="icon icon--pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row nomargin">
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding">
+                    <p class="footer__text">© 2019</p>
+                </div>
+                <div class="col col--xs-12 col--sm-6 col--md-4 nopadding"></div>
+                <div class="col col--xs-5 col--sm-6 col--md-1 nopadding">
+                    <div class="footer__mail">
+                        <a class="footer__mail-link" href="mailto:cakazies@gmail.com">cakazies@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col col--xs-7 col--sm-6 col--md-3 nopadding"></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    
+    var disqus_config = function () {
+        // this.page.url = '<?php echo get_permalink(); ?>';
+        // this.page.identifier = '<?php echo dsq_identifier_for_post($post); ?>';
+        this.page.url = 'http://localhost/mycv';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost/mycv/blog/connection-postgres-with-go-language.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sapiderman.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function readTextFile(file) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function() {
+                if (rawFile.readyState === 4) {
+                    if (rawFile.status === 200 || rawFile.status == 0) {
+                        var allText = rawFile.responseText;
+                        $(".article_contents").html(allText)
+                    } else {
+                        $(".article_contents").html("")
+                    }
+                } else {
+                    $(".article_contents").html("")
+                }
+            }
+            rawFile.send(null);
+        }
+    </script>
+
+</body>
+
+</html>
