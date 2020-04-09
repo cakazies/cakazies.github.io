@@ -53,6 +53,15 @@
             "link" : "06-documentation-api.html",
             "sort_content" : "Membuat Dokumentasi tidak seribet yang kelihatannya kok, ga percaya? coba baca ... ",
             "long_content" : ""
+        },
+        {
+            "id" : "7",
+            "title" : "Membuat Rest API Golang dengan framework Revel dengan CockroachDB  🐞",
+            "images" : "https://miro.medium.com/max/4800/1*aLEMQNKbgqdtcboysOp-sg.jpeg",
+            "date" : "09 April 2020",
+            "link" : "07-rest-api-go-revel.html",
+            "sort_content" : "Hello Guys, sudah lama yah ga update untuk blog saya lagi hehehe, okey untuk sekarang saya akan share ... ",
+            "long_content" : ""
         }
     ]
 }
