@@ -101,17 +101,16 @@ $(document).ready(function(){
         }
     });
 
-    $.getJSON( "data/app.json", function( data ) {
-        let html2 = ""
-        for (let i = 0; i < data.data.length; i++) {
-            html2 += '<div class="portfolio-item col-xs-6 col-sm-4 col-md-3" ><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links">'
-            if (data.data[i].link != null ){
-                html2 += '<a target="_blank" rel="noopener" href="'+data.data[i].link+'"><i class="fas fa-external-link-alt"></i></a>'
-            }
-            html2 += '<a class="image-link" target="_blank" href="'+data.data[i].img+'"><i class="fa fa-search-plus"></i></a></div><img src="'+data.data[i].img+'" alt="'+data.data[i].name+'" /><div class="portfolio-info"><h3>'+data.data[i].name+'</h3></div></div></div></div>'
-        }
-        $("#apps").html(html2)
-    });
+    // $.getJSON( "data/app.json", function( data ) {
+    //     let html2 = ""
+    //     for (let i = 0; i < data.data.length; i++) {
+    //         html2 += '<div class="portfolio-item col-xs-6 col-sm-4 col-md-3" ><div class="portfolio-bg"><div class="portfolio"><div class="tt-overlay"></div><div class="links">'
+    //         if (data.data[i].link != null ){
+    //             html2 += '<a target="_blank" rel="noopener" href="'+data.data[i].link+'"><i class="fas fa-external-link-alt"></i></a>'
+    //         }
+    //         html2 += '<a class="image-link" target="_blank" href="'+data.data[i].img+'"><i class="fa fa-search-plus"></i></a></div><img src="'+data.data[i].img+'" alt="'+data.data[i].name+'" /><div class="portfolio-info"><h3>'+data.data[i].name+'</h3></div></div></div></div>'
+    //     }
+    // });
 
     $.getJSON( "data/medium.json", function( data ) {
         let html2 = ""
